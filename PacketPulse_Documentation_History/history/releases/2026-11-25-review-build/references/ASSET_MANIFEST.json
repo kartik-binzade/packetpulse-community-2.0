@@ -1,0 +1,57 @@
+[
+  {
+    "file": "references/design-inspiration/REF-00-matte-black-analytical-dashboard.jpg",
+    "bytes": 98541,
+    "sha256": "f62a1f1dfb1155d2287039ab1aa6197dbfaf41b9d296c2d773ac8f0140f93280"
+  },
+  {
+    "file": "references/design-inspiration/REF-01-spacious-people-dashboard.jpg",
+    "bytes": 93292,
+    "sha256": "6a5372407ac32c7b863920e562a83a91af8b29f3cf334654b58165b30bc46766"
+  },
+  {
+    "file": "references/design-inspiration/REF-02-file-upload-progress.jpg",
+    "bytes": 16996,
+    "sha256": "0abc616b3fd8a6ca47f51582f07731584f016875585164d051830abea6c4e3a1"
+  },
+  {
+    "file": "references/design-inspiration/REF-03-file-upload-complete-compact.jpg",
+    "bytes": 8968,
+    "sha256": "79d24810449ee5b586f9416c6625e582ca29a8685ba3d02d00d05a1b52a3d5f6"
+  },
+  {
+    "file": "references/design-inspiration/REF-04-file-upload-complete-actions.jpg",
+    "bytes": 12120,
+    "sha256": "7f733e1e7f479b93651c4b8e4839cd7bcc6237882071015067af13ec09a9bd87"
+  },
+  {
+    "file": "references/design-inspiration/REF-05-perspective-card-carousel.jpg",
+    "bytes": 38076,
+    "sha256": "839b59ecfee36c07d848ad719c88c3a820e50d9aa177cc10977be651efba7243"
+  },
+  {
+    "file": "references/design-inspiration/REF-06-numbered-feature-cards.jpg",
+    "bytes": 40218,
+    "sha256": "6f06fd30379ea710550f98ee0d6a480aee573f00d8a8e9c0489b4f0857135b9a"
+  },
+  {
+    "file": "references/design-inspiration/REF-07-community-technical-questions-design.png",
+    "bytes": 1817963,
+    "sha256": "b4b302786e3eeb98705caffeb45ce9ca263725c1a2380085a1d5848abaf162d1"
+  },
+  {
+    "file": "references/design-inspiration/REF-08-community-resources-design.png",
+    "bytes": 1830627,
+    "sha256": "79b09ba8df4cc7eb9747364735f82182bb211472e35f9b99a7a0fe50df180abe"
+  },
+  {
+    "file": "references/design-inspiration/REF-09-signup-profile-account-design.png",
+    "bytes": 1707419,
+    "sha256": "50eae6811c822a1de66cd3a6f5e9e7509ef2e7c3b60758e257b5492b6ec028d1"
+  },
+  {
+    "file": "references/design-inspiration/REF-10-six-reference-contact-sheet.jpg",
+    "bytes": 115267,
+    "sha256": "bbb7ce9b08a38520b50b25921b710041c7419bce9f6fda5e0e4def1b69edc779"
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "id": "REF-07",
+      "file": "design-inspiration/REF-07-community-technical-questions-design.png",
+      "description": "Four-screen Community Technical Questions design concept"
+    },
+    {
+      "id": "REF-08",
+      "file": "design-inspiration/REF-08-community-resources-design.png",
+      "description": "Four-screen Community Resources design concept"
+    },
+    {
+      "id": "REF-09",
+      "file": "design-inspiration/REF-09-signup-profile-account-design.png",
+      "description": "Signup, onboarding, profile and account design concept"
+    }
+  ],
+  "brand_patterns": "brand-patterns/ (8 transparent SVG starter motifs; tokenizable inline overlays)",
+  "ui_inspiration": [
+    {
+      "id": "REF-00",
+      "file": "ui-inspiration/REF-00-matte-black-analytical-dashboard.jpg",
+      "description": "Owner-supplied Matte Black analytical dashboard reference."
+    },
+    {
+      "id": "REF-01",
+      "file": "ui-inspiration/REF-01-spacious-people-analytics-dashboard.jpg",
+      "description": "Owner-supplied spacious people/operations dashboard reference."
+    },
+    {
+      "id": "REF-02",
+      "file": "ui-inspiration/REF-02-file-upload-in-progress.jpg",
+      "description": "Owner-supplied upload in-progress card with percentage, byte progress, pause and cancel."
+    },
+    {
+      "id": "REF-03",
+      "file": "ui-inspiration/REF-03-file-upload-complete-compact.jpg",
+      "description": "Owner-supplied compact completed upload row."
+    },
+    {
+      "id": "REF-04",
+      "file": "ui-inspiration/REF-04-file-upload-complete-actions.jpg",
+      "description": "Owner-supplied completed upload card with Change and Download actions."
+    },
+    {
+      "id": "REF-05",
+      "file": "ui-inspiration/REF-05-perspective-card-carousel.jpg",
+      "description": "Owner-supplied perspective-led card carousel."
+    },
+    {
+      "id": "REF-06",
+      "file": "ui-inspiration/REF-06-numbered-feature-cards.jpg",
+      "description": "Owner-supplied numbered feature/step-card reference."
+    }
+  ],
+  "brand_patterns_note": "Use transparent SVG assets in brand-patterns/ as optional, recolourable overlay patterns. Preserve the existing page/card background for this pattern exercise. New patterns and colourways may be explored; the current families are not exhaustive."
+}

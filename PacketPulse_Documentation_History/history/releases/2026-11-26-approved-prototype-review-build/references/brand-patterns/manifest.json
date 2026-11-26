@@ -1,0 +1,108 @@
+{
+  "title": "PacketPulse Brand Pattern Starter Assets",
+  "date": "2026-11-26",
+  "note": "Transparent overlays. SVGs use CSS custom properties and are intended for inline embedding/React components so tokens can flow into the artwork. They do not contain a background rectangle except the repeating dot fill in the matrix asset, which is itself transparent outside the dots.",
+  "tokens": {
+    "--pp-pattern-a": "primary line/node",
+    "--pp-pattern-b": "secondary line/node",
+    "--pp-pattern-c": "tertiary accent",
+    "--pp-pattern-highlight": "focus/pulse accent"
+  },
+  "assets": [
+    {
+      "id": "PAT",
+      "file": "PP-PAT-001-packet-routes.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-002-node-constellation.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-003-signal-waves.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-004-pulse-trails.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-005-radar-echo.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-006-secure-layers.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-007-data-flow.svg"
+    },
+    {
+      "id": "PAT",
+      "file": "PP-PAT-008-packet-matrix.svg"
+    }
+  ],
+  "creative_direction": {
+    "status": "Approved Prototype",
+    "background_policy": "Transparent overlays only for the current pattern exercise; do not replace or repaint existing page/card backgrounds.",
+    "families_are_exhaustive": false,
+    "design_guidance": "Creative and experimental. Families, colours, gradients, line weights, crops, densities and motion variants may be evolved or replaced.",
+    "colourways": [
+      {
+        "name": "Grove",
+        "tokens": [
+          "forest",
+          "eucalyptus",
+          "signal-lime",
+          "deep-teal"
+        ]
+      },
+      {
+        "name": "Aurora",
+        "tokens": [
+          "cyan",
+          "azure",
+          "indigo",
+          "violet"
+        ]
+      },
+      {
+        "name": "Spectrum",
+        "tokens": [
+          "blue",
+          "cyan",
+          "lime",
+          "amber"
+        ]
+      },
+      {
+        "name": "Ember",
+        "tokens": [
+          "plum",
+          "coral",
+          "amber",
+          "warm-neutral"
+        ]
+      },
+      {
+        "name": "Night Signal",
+        "tokens": [
+          "matte-black",
+          "electric-blue",
+          "violet",
+          "cyan"
+        ]
+      },
+      {
+        "name": "Soft Prism",
+        "tokens": [
+          "eucalyptus",
+          "mist",
+          "lavender",
+          "pale-cyan"
+        ]
+      }
+    ],
+    "pantone_note": "Pantone references may guide physical/print studies. Never invent PMS identifiers or claim a direct Pantone match from HEX alone; record the official reference and digital conversion if used."
+  }
+}

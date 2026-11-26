@@ -1,0 +1,186 @@
+/*
+  PacketPulse 2.0 color tokens — Design Color System revision 1.2 (APPROVED) + DEC-036/DEC-037 module identity rules for dark and light themes.
+  Authority: PacketPulse_2.0_Design_Color_System.pdf.
+  Change the PDF and decision register before updating these values. The overview board is a visual summary only; use this file and the PDF for exact values.
+  Semantic names use surface + foreground pairings, compatible with shadcn/ui patterns.
+*/
+
+:root {
+  color-scheme: light;
+  --background: #F5F8F6;
+  --foreground: #152025;
+  --card: #FFFFFF;
+  --card-foreground: #152025;
+  --popover: #FFFFFF;
+  --popover-foreground: #152025;
+  --primary: #156152;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #156152;
+  --secondary: #E8F4EF;
+  --secondary-foreground: #152025;
+  --muted: #E8F4EF;
+  --muted-foreground: #52615B;
+  --accent: #E8F4EF;
+  --accent-foreground: #152025;
+  --border: #DCE5DF;
+  --input: #738279;
+  --ring: #156152;
+  --surface-selected: #E8F4EF;
+  --surface-raised: #FFFFFF;
+  --overlay: #FFFFFF;
+  --disabled-foreground: #52615B;
+
+  --success: #E8F6ED;
+  --success-foreground: #166534;
+  --warning: #FFF4D6;
+  --warning-foreground: #854D0E;
+  --danger-surface: #FCEBED;
+  --danger-foreground: #9F2534;
+  --destructive: #B42335;
+  --destructive-foreground: #FFFFFF;
+  --info: #F1F5F9;
+  --info-foreground: #475569;
+
+  --signal-lime: #C7FE53;
+  --signal-lime-foreground: #001D21;
+  --brand-forest: #156152;
+  --deep-teal: #001D21;
+
+  --community: #156152;
+  --community-soft: #E8F4EF;
+  --learning: #635BCA;
+  --learning-soft: #F0EFFF;
+  --recruitment: #1D4F86;
+  --recruitment-soft: #E8F0FA;
+  --payments: #6F2A5F;
+  --payments-soft: #F7EBF4;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0B1114;              /* Cool charcoal canvas */
+  --foreground: #F4F7F6;
+  --card: #101B1E;
+  --card-foreground: #F4F7F6;
+  --popover: #1A2B30;
+  --popover-foreground: #F4F7F6;
+  --primary: #156152;                 /* Brand forest */
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #1B7564;
+  --secondary: #142327;
+  --secondary-foreground: #F4F7F6;
+  --muted: #142327;
+  --muted-foreground: #A3B4B7;
+  --accent: #1A2B30;
+  --accent-foreground: #F4F7F6;
+  --border: #263B40;                  /* Quiet decorative border/divider */
+  --input: #71878A;                   /* Higher-contrast control boundary */
+  --ring: #96D294;
+  --surface-selected: #142327;
+  --surface-raised: #1A2B30;
+  --overlay: #1C3035;                 /* Only for meaningful floating layers */
+  --disabled-foreground: #819699;
+
+  --success: #123B32;
+  --success-foreground: #86E0B0;
+  --warning: #46341C;
+  --warning-foreground: #FFD17A;
+  --danger-surface: #45252C;
+  --danger-foreground: #FF9FAD;
+  --destructive: #D76A7A;
+  --destructive-foreground: #0B1114;
+  --info: #273942;
+  --info-foreground: #B8C9D2;
+
+  --signal-lime: #C7FE53;             /* Rewards / one standout action */
+  --signal-lime-foreground: #0B1114;
+  --brand-forest: #156152;
+  --deep-teal: #001D21;               /* Community-only core canvas; never the global dark canvas */
+
+  --community: #96D294;
+  --community-soft: #172D25;
+  --learning: #B1ACFE;
+  --learning-soft: #26235A;
+  --recruitment: #8DB8E8;
+  --recruitment-soft: #12304D;
+  --payments: #E4A8D8;
+  --payments-soft: #3A1F36;
+}
+
+/*
+  Section identity scopes (DEC-036/DEC-037): shared shell stays theme-neutral.
+  Light theme: off-white canvas and white content surfaces; use each section's
+  approved light accent/tint in localized identity zones. Community may use a
+  deep-teal hero/canvas only inside Community routes, with a light foreground.
+  Dark theme: charcoal canvas and teal-tinted neutral surfaces; use each section's
+  approved dark accent/tint in localized identity zones. Dense cards/forms remain
+  neutral in both themes. No new palette values are introduced here.
+*/
+[data-section="community"] {
+  --section-accent: var(--community);
+  --section-soft: var(--community-soft);
+  --section-hero: var(--deep-teal);
+  --section-hero-foreground: #F4F7F6;
+  --section-pattern: rgba(21, 97, 82, 0.035);
+}
+[data-section="learning"] {
+  --section-accent: var(--learning);
+  --section-soft: var(--learning-soft);
+  --section-hero: var(--learning-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(99, 91, 202, 0.035);
+}
+[data-section="practice"] {
+  --section-accent: var(--learning);
+  --section-soft: var(--learning-soft);
+  --section-hero: var(--surface-raised);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(99, 91, 202, 0.028);
+}
+[data-section="assessments"] {
+  --section-accent: var(--community);
+  --section-soft: var(--community-soft);
+  --section-hero: var(--community-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(21, 97, 82, 0.03);
+}
+[data-section="jobs"] {
+  --section-accent: var(--recruitment);
+  --section-soft: var(--recruitment-soft);
+  --section-hero: var(--recruitment-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(29, 79, 134, 0.035);
+}
+[data-section="payments"] {
+  --section-accent: var(--payments);
+  --section-soft: var(--payments-soft);
+  --section-hero: var(--payments-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(111, 42, 95, 0.035);
+}
+
+/* Dark theme uses brighter accents over the already-approved dark tints. */
+.dark [data-section="community"] { --section-pattern: rgba(150, 210, 148, 0.045); }
+.dark [data-section="learning"] { --section-pattern: rgba(177, 172, 254, 0.045); }
+.dark [data-section="practice"] { --section-pattern: rgba(177, 172, 254, 0.035); }
+.dark [data-section="assessments"] { --section-pattern: rgba(150, 210, 148, 0.035); }
+.dark [data-section="jobs"] { --section-pattern: rgba(141, 184, 232, 0.045); }
+.dark [data-section="payments"] { --section-pattern: rgba(228, 168, 216, 0.045); }
+
+/* Usage rules:
+   - Primary CTA: --primary + --primary-foreground. Hover: --primary-hover.
+   - Lime is limited to rewards, milestone moments, or one standout action per view.
+   - Canvas texture: broad canvas pattern belongs only to the Community section; other modules use local hero/identity zones.
+     Keep dense content cards neutral and preserve text contrast.
+   - Use a restrained teal ambient gradient in hero/empty-state areas only; no glow on routine cards.
+   - Surface ladder: background -> card -> selected -> raised/popover -> overlay. Elevate only when justified.
+   - Quiet borders separate surfaces; use --input for interactive control boundaries.
+   - Focus ring: 3px solid var(--ring), 2px offset. Do not use color alone for any state.
+   - Status chip/banner uses a semantic surface + its matching foreground, visible text, and a glyph.
+   - Both themes use a neutral shared canvas: off-white in light mode and charcoal in dark mode.
+   - Community may use a deep-teal identity canvas/hero only within Community routes/sections.
+   - Light mode uses approved module tints/accents in localized identity zones; dense cards/forms stay neutral.
+   - Learning and Practice share the Learning family; Practice is distinguished with code/lab component treatment.
+   - Assessments uses a verification-focused green identity zone; Jobs uses recruitment blue; Payments uses plum.
+   - Accent colors never replace semantic status tokens. If a color changes, revise the PDF first, then this token file and the decision register. DEC-037 applies the module identity rule to light mode without adding colors.
+*/

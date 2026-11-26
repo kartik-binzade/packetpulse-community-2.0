@@ -1,0 +1,223 @@
+{
+  "issued": "2026-11-26",
+  "status": "Approved Prototype",
+  "note": "Creative, expandable registry; not exhaustive. Exact package install and production adoption require repository/licence/security checks.",
+  "media": [
+    {
+      "id": "PP-MEDIA-001",
+      "name": "Branded media player shell",
+      "source": "Video.js 10 @videojs/react",
+      "version_researched": "10.7.0",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-002",
+      "name": "Recording/resource media card",
+      "source": "PacketPulse composition",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-003",
+      "name": "Player controls",
+      "source": "Video.js 10 + PacketPulse skin",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-004",
+      "name": "Transcript and chapter panel",
+      "source": "PacketPulse composition",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-005",
+      "name": "Approved embed frame",
+      "source": "Video.js provider integrations + secure PacketPulse wrapper",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-FILE-001",
+      "name": "PDF reader",
+      "source": "React-PDF / PDF.js",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-UPLOAD-002",
+      "name": "Upload manager",
+      "source": "Uppy React headless/hooks + Tus",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-006",
+      "name": "Media/file fallback panel",
+      "source": "PacketPulse composition",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-MEDIA-007",
+      "name": "Audio waveform and timestamp region",
+      "source": "WaveSurfer.js 8.1.0 + PacketPulse controls",
+      "status": "Approved Prototype",
+      "notes": "Optional audio-only waveform/regions; pre-decoded peaks for streamed or large content; standard controls remain available"
+    }
+  ],
+  "nested": [
+    {
+      "id": "PP-NEST-001",
+      "name": "Page context header"
+    },
+    {
+      "id": "PP-NEST-002",
+      "name": "Route-backed contextual drawer"
+    },
+    {
+      "id": "PP-NEST-003",
+      "name": "Master-detail workspace"
+    },
+    {
+      "id": "PP-NEST-004",
+      "name": "Return-context controller"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "PP-PAT-001",
+      "name": "Packet Routes",
+      "file": "PP-PAT-001-packet-routes.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-002",
+      "name": "Node Constellation",
+      "file": "PP-PAT-002-node-constellation.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-003",
+      "name": "Signal Waves",
+      "file": "PP-PAT-003-signal-waves.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-004",
+      "name": "Pulse Trails",
+      "file": "PP-PAT-004-pulse-trails.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-005",
+      "name": "Radar Echo",
+      "file": "PP-PAT-005-radar-echo.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-006",
+      "name": "Secure Layers",
+      "file": "PP-PAT-006-secure-layers.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-007",
+      "name": "Data Flow",
+      "file": "PP-PAT-007-data-flow.svg",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-PAT-008",
+      "name": "Packet Matrix",
+      "file": "PP-PAT-008-packet-matrix.svg",
+      "status": "Approved Prototype"
+    }
+  ],
+  "additions": [
+    {
+      "id": "PP-MEDIA-007",
+      "name": "Audio waveform and timestamp region",
+      "source": "WaveSurfer.js 8.1.0 + PacketPulse controls",
+      "status": "Approved Prototype",
+      "notes": "Optional audio-only waveform/regions; pre-decoded peaks for streamed or large content; standard controls remain available"
+    }
+  ],
+  "files": [
+    {
+      "id": "PP-FILE-002",
+      "name": "Image and supported document preview",
+      "source": "PacketPulse type-aware viewer",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-FILE-003",
+      "name": "Code/text/CSV preview",
+      "source": "PacketPulse composition with audited syntax/table utilities",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-FILE-004",
+      "name": "Office conversion/preview adapter",
+      "source": "Isolated conversion or separately licensed provider",
+      "status": "Approved Prototype",
+      "notes": "Do not assume AGPL Office components are suitable for proprietary SaaS without legal review."
+    }
+  ],
+  "shared_components": [
+    {
+      "id": "PP-SHELL-001",
+      "name": "Application shell and role-aware sidebar",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-SHELL-005",
+      "name": "Collapsible contextual rail",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-DATA-001",
+      "name": "Metric/KPI card",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-DATA-004",
+      "name": "Reusable data table",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-COM-001",
+      "name": "Technical question card",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-COM-004",
+      "name": "Member identity card",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-RES-001",
+      "name": "Resource discovery and featured collection",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-ID-001",
+      "name": "Signup and identity form",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-ID-002",
+      "name": "Profile visibility preview",
+      "status": "Approved Prototype"
+    },
+    {
+      "id": "PP-NEST-005",
+      "name": "Nested child route frame and mobile header",
+      "status": "Approved Prototype"
+    }
+  ],
+  "owner_direction": "Open, creative, experimental. Named families and colourways are starting points, not hard limits. Current brand-pattern work is transparent overlays only; preserve existing backgrounds.",
+  "reference_assets": [
+    "ui-inspiration/REF-00-",
+    "ui-inspiration/REF-01-",
+    "ui-inspiration/REF-02-",
+    "ui-inspiration/REF-03-",
+    "ui-inspiration/REF-04-",
+    "ui-inspiration/REF-05-",
+    "ui-inspiration/REF-06-"
+  ]
+}

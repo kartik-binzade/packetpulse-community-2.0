@@ -1,0 +1,3 @@
+# Claude Discussion Handoff — Resources and Member Identity (25 November 2026)
+
+Read `PacketPulse 2.0 — Discussion Record — Resources and Identity Experiences — 25 November 2026.md`. The two experiences are Approved Prototype for the next review build. They are not production-approved. Use the screen, workflow, component and test IDs in Documents 1–5. Build the Resources Library, Resource Detail/Reader, Share Resource wizard, Saved Resources, signup/onboarding, professional profile, visibility preview and Account Control Centre. Use mock/sandbox states for unconfigured OAuth, payment, communication or security integrations. Preserve privacy and server-side visibility rules. Review results using Retain, Refine, Restrict or Remove.

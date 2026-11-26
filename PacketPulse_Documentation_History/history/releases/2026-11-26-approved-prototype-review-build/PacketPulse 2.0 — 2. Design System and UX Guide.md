@@ -1,0 +1,470 @@
+# PacketPulse 2.0 — 2. Design System and UX Guide
+
+Version 4.5 · 26 November 2026 · Owner: design lead (to be named) · Supersedes the 17 October 2026 Design System and UX Guide v3.0. Decisions are cited as DEC, CON, OPEN in Document 1; screens and flows are in Document 3; build tasks are in Document 4. **[APPROVED PROTOTYPE]** marks owner-approved direction for the next review build; it is not final production approval. PV means built and tested in the reference prototype only. This revision introduces owner-directed visual changes plus recommended libraries; dependency choices remain subject to the repository audit.
+
+## 1. Philosophy and UX rules
+
+The design system is a living design language: it creates coherence while leaving room for discovery. Principles are useful starting points and shared quality checks, not hard walls. Teams may depart from a pattern when a better experience emerges; capture the intent, test the result and share what was learned. IDs help with traceability, not to police creativity. The principles below are prompts and quality checks, not hard aesthetic constraints. Designers may propose a better route, combine patterns, experiment with wider palettes or invent new component families; record the reason and review the result.
+
+**Owner clarification — open creative direction (26 November 2026):** Do not treat this guide as a rigid visual rulebook. Signal Grove provides continuity, not an aesthetic ceiling. The listed palettes, patterns, components, layout archetypes and motion recipes are examples, not an exhaustive list. Explore new compositions, combinations, gradients, type, waves, pulses, network/security motifs and interaction patterns where they improve the product. Distinguish essential experience and safety checks (accessibility, readable contrast, semantic states, privacy, security, licensing and performance) from flexible aesthetic preferences. For the current brand-pattern work, create optional transparent overlays and keep existing page/card backgrounds unchanged.
+
+
+| ID | Rule | Consequence |
+| --- | --- | --- |
+| DES-001 | A polished screen is not a usable flow. Every flow defines its entry, next step, recovery path, and its empty and error states before visual polish | No screen ships without loading, empty, error and success states |
+| DES-002 | Principles are adaptable guidance. Explore beyond the default when it improves the experience; explain and evaluate meaningful departures | Fewer late debates |
+| DES-003 | Automation is explainable and governed. AI outputs are labelled; automated skill-verification experiments may decide under a versioned policy, explicit evidence rules, thresholds, audit, appeal/re-review, feature flags and human fallback. Recruitment, payment and sensitive account decisions remain human-confirmed by default | No opaque or unreviewable automated decisions; no extension to hiring or money without a separate DEC |
+| DES-004 | Accessibility is a speed feature. Contrast, keyboard flow and clear labels reduce errors for everyone | WCAG 2.2 AA is the release bar |
+| DES-005 | Coherence scales through shared tokens and components, while bespoke compositions remain welcome when they solve a real design problem | A new screen is built from existing parts first |
+| DES-006 | Light and dark themes are both designed and tested (DEC-003) | Dark is not an inversion of light |
+| DES-007 | Semantic status colours carry meaning and must include text/glyphs; expressive brand colours and decorative pattern colourways are also welcome when they remain legible and do not impersonate status | No color-only states |
+| DES-008 | Make the action hierarchy easy to read. A clear leading action is often helpful, but use the number and weight of actions that fit the real task | Users can see their options without being artificially constrained |
+| DES-009 | Always show where the user is, what changed, and what to do next | No dead ends; every empty state offers an action |
+| DES-010 | Plain language, short sentences, no jargon for its own sake | Fewer support questions |
+| DES-011 | Ask for information only when it is needed, and say why for sensitive fields | Higher completion, more trust |
+| DES-012 | Work is recoverable: save and resume, warn before losing changes, confirm destructive actions by naming their effect | Fewer abandoned flows |
+| DES-013 | Whitespace is intentional. Use visual rhythm, readable line lengths and generous separation; density is chosen by task, not by screen size alone | Calm hierarchy and lower perceived effort |
+| DES-014 | Design for emotional quality: calm, capable, welcoming, credible and quietly rewarding; avoid manipulative urgency and decoration that undermines the task; expressive visual moments are welcome when they add value | Users should feel oriented and confident, not pressured |
+| DES-015 | Start with Editorial and Analytical workspace archetypes, but evolve or combine layouts when the content and user journey call for it | Different tasks receive the right information architecture |
+| DES-016 | Matte Black Edition is a preferred reference for analytics-heavy workspaces, not a required treatment or a forced global theme | Strong analytical focus while preserving user choice |
+| DES-017 | Motion must communicate feedback, orientation or state change; decorative motion is optional and reduced-motion behavior is mandatory | Interfaces feel responsive without distraction |
+| DES-018 | Build from a curated component ecosystem and PacketPulse-owned wrappers; external library styles never define brand identity | Faster delivery with consistent product character |
+| DES-019 | Media assets follow visual, accessibility, performance and licensing rules; do not use imagery merely to fill space | Coherent and trustworthy visual language |
+| DES-020 | Components support Comfortable, Compact or Reading density where the task warrants it; Comfortable is the default | Control information density without sacrificing whitespace |
+| DES-021 | Analytical dashboards often benefit from a few meaningful metrics, a strong analysis area and a contextual rail; composition can vary by task and user | Better scan paths and usable data workspaces |
+| DES-022 | Creative exploration is part of the system: adapt, combine or invent visual patterns, layouts, typography, colourways and interactions when they improve the experience | A recognisable product can still feel fresh and expressive |
+| DES-023 | Colour is a flexible design material. Explore the full token palette, module accents, semantic colours, tonal ramps, gradients and new combinations; use semantic meanings as guidance, not as a limit on decorative colour | More expressive yet coherent product experiences |
+| DES-024 | Brand motifs are independent visual layers. Pattern overlays should work with existing surfaces and may be removed, recoloured, cropped or combined without changing the underlying page/card background | Reusable identity without forcing a new surface treatment |
+| DES-025 | Pattern and motion families are open-ended. Waves, pulses, packet paths, nodes, radar, security geometry and future motifs may evolve with product needs | Distinctive visual language that can grow with the product |
+| DES-026 | Parent/child and nested experiences preserve orientation and user context across routes, drawers, sheets, tabs and inline details; choose the composition that best fits the task and viewport | Fewer dead ends and less context loss |
+| DES-027 | Media and recordings are first-class content. Select appropriate players/viewers for video, audio, documents and embedded providers; design captions, transcripts, chapters, resume and recovery as part of the experience | Accessible, integrated resource consumption |
+| DES-028 | External component libraries are sources of ideas and implementation building blocks, not authorities over the PacketPulse visual language; curate, adapt, replace or create components as evidence suggests | Better quality without library-driven sameness |
+| DES-029 | Design experiments are reviewable. Approved Prototype means the experience belongs in the review build; capture feedback and decide Retain, Refine, Restrict or Remove for the next build | Creative work can be evaluated and improved deliberately |
+| DES-030 | Design assets and component sources remain traceable without constraining the design: record origin, version, licence, owner and adaptations; review new sources as the ecosystem evolves | Reuse stays responsible and maintainable |
+| DES-031 | The design language is deliberately open-ended. Treat examples, tokens, pattern families, library choices, layout archetypes and motion recipes as starting points; invent or evolve them when it improves the experience. Current brand-pattern work remains optional transparent overlays that preserve existing backgrounds | A coherent system that continues to evolve rather than hardening into a visual rulebook |
+
+## 2. Color psychology applied
+
+| UX principle | Implementation | Why it helps | Status |
+| --- | --- | --- | --- |
+| Reduce cognitive load | Thoughtful surface hierarchy with enough colour and contrast to support the story | Less visual competition | Confirmed |
+| Establish hierarchy | Give important actions clear visual priority; allow the screen to have several peer actions when the workflow calls for them | Choices feel clear without forcing an artificial one-action layout | Confirmed |
+| Build trust | Consistent branding, explicit transaction states | Predictable behavior | Confirmed |
+| Encourage progress | Visible milestones and progress in the active module's accent | Progress is easy to read | Confirmed; the color is OPEN-01 |
+| Prevent mistakes | Amber warnings, red errors, descriptive messages | Important states stand out | Confirmed |
+| Improve accessibility | Contrast, icons, labels and text with every status | Works for different visual abilities | Confirmed |
+
+**OPEN-01 — Approved Prototype disposition.** Forest is an established brand option, not a universal mandatory action colour. Explore Forest, Learning Indigo, Recruitment Blue, Payments Plum, cyan, azure, violet, coral, amber and thoughtful multi-colour or gradient treatments in context. A module accent can become the leading action or progress colour when it helps people understand the current task. Keep success/warning/danger/information states legible and distinct from decorative colour. Test the complete screen rather than selecting colours in isolation.
+
+The current module associations are a useful starting language, not a closed colour system. Colour psychology is contextual: test palette, contrast, user expectations, culture, hierarchy and emotional tone together. New colour combinations are welcome when they improve the experience.
+
+## 3. Brand
+
+Name: PacketPulse. Tagline: Connect, Learn & Grow Together. Voice: plain, direct, encouraging, technical without jargon for its own sake, never urgent or manipulative. Use Inter Semibold as the interim product wordmark and UI baseline. Explore logotype and display-font directions in the review build (OPEN-02 / DEC-049); expressive type experiments may appear in marketing, campaign and editorial moments without forcing a wholesale UI-font change. The mark is a lime dot with a forest ring (PV).
+
+## 4. Color system
+
+### 4.1 Tokens (light and dark)
+
+| Token | Light | Dark | Use |
+| --- | --- | --- | --- |
+| Page background | #F5F8F6 | #001D21 | App background |
+| Surface | #FFFFFF | #002631 | Cards, forms, dialogs |
+| Surface subtle | #E8F4EF | #0C3437 | Selected rows, active navigation, tints |
+| Text primary | #152025 | #F5F8F6 | Headings and body |
+| Text secondary | #52615B | #B7C9C2 | Supporting text |
+| Border | #DCE5DF | #33514F | Dividers and card outlines (decorative) |
+| Control border | #738279 | #7D9A95 | Inputs, switches, checkboxes (3:1 required) |
+| Brand / action family | #156152 is an established option; explore compatible token ramps and module-aware action treatments | Adapt to theme and context | Brand actions, selected controls, links and navigation; choose the most legible and emotionally appropriate treatment for the screen |
+| Focus ring | #156152 | #96D294 | 3 px outline, 2 px offset as a starting treatment; adapt shape/contrast while keeping focus unmistakable |
+| Signal lime | #C7FE53 | #C7FE53 | Expressive highlight, achievement, emphasis or action when it suits the context; pair with accessible foregrounds |
+| Deep teal | #001D21, #002631 | same | Dark panels and hero backgrounds |
+
+### 4.2 Module identities
+
+| Module | Light | Dark | Soft background (light, dark) | Role |
+| --- | --- | --- | --- | --- |
+| Community and brand | #156152 | #96D294 | #E8F4EF, #0C3437 | Welcoming, credible |
+| Learning | #635BCA | #B1ACFE | #F0EFFF, #26235A | Focus |
+| Recruitment | #1D4F86 (accent #2563A6, deep #163B5C) | #8DB8E8 | #E8F0FA, #12304D | Reliability |
+| Payments | #6F2A5F | #E4A8D8 | #F7EBF4, #3A1F36 | Value, care |
+
+Module associations are useful starting points, not fences. A module may lead with its accent, share a gradient, borrow a complementary colourway or use a more expressive surface treatment when that improves the task and brand experience. Preserve clear semantic states and legibility; the shared tokens and interaction language maintain coherence even when a screen explores a bolder visual composition. A whole-page colour treatment is not prohibited by default; judge it by usability, contrast, tone and hierarchy.
+
+### 4.3 Semantic and verification colors
+
+| State | Strong (text) light, dark | Soft background light, dark | Glyph | Meaning |
+| --- | --- | --- | --- | --- |
+| Success | #176B35, #7FDC98 | #EAF7EE, #0F3A22 | check | Completed, saved, passed, verified |
+| Warning or pending | #94620D, #F0C264 | #FFF4D6, #3D3010 | exclamation | Needs attention, in review |
+| Danger | #B42332, #FF8A93 | #FEE4E2, #4A1A20 | cross | Failed, invalid, destructive |
+| Information | #3D455C, #B4BED6 | #EDF0F5, #252B3A | info | Neutral guidance |
+
+Verification labels: Self declared (neutral), Assessment verified and PP verified (forest), Experience verified (recruitment blue), Certification verified (indigo), Verification pending (amber), unsuccessful (red). Each label has its own wording and a detail view (DEC-013, Document 1 section 10.1).
+
+### 4.4 Quality results
+
+- Every text pair above is at least 4.5:1 (lowest 4.65:1); control borders are 4.04:1 on white and 5.24:1 in dark.
+- Under color-blindness simulation two pairs are weak and accepted with a rule: Community green versus Success green, and Community versus Recruitment. Rule: status has text and a glyph; modules also have an icon and a name.
+- Plum Payments is clearly distinct from every other module and state color under all four vision types.
+- Hero gradients keep text off the pale eucalyptus end (it measured 2.1:1).
+- Rule for new colors: two colors that must be told apart need a clear difference under all four vision simulations, or a label or icon with them.
+
+### 4.5 Matte Black Edition (Analytical Workspace)
+
+Matte Black Edition is the preferred visual reference for Operations, Recruitment analytics, Community analytics and other data-heavy dashboards inspired by the supplied Vantage Admin reference. It does not replace Signal Grove, module accents or the light theme.
+
+| Token | Draft value | Use |
+| --- | --- | --- |
+| Analytics canvas | #0B0D0C | Main dashboard background |
+| Analytics surface | #171A18 | KPI panels, tables and work regions |
+| Analytics raised | #222724 | Menus, selected panels and raised surfaces |
+| Analytics border | #303631 | Subtle structural separators |
+| Analytics text | #F2F5F2 | Main text |
+| Analytics muted | #A8B2AC | Supporting text; validate small-text contrast |
+| Brand action | #156152 | Primary actions; retain semantic text and focus states |
+| Signal emphasis | #C7FE53 | Rare emphasis and meaningful milestones; pair with dark text |
+| Optional chart series | #A78BFA | Secondary data series only, never a status or brand replacement |
+
+These are starting tokens proposed from the visual reference and prior discussion, not a closed palette or a verified accessibility palette. Explore other token combinations, tonal ramps, accent gradients and complementary hues in the prototype. Matte Black is a visual option for suitable analytical workspaces, not an instruction to use a single accent everywhere. Before production, calculate contrast for every text/control pair, check chart-series distinction in color-vision simulations, and adjust values as needed. Do not assume all muted text is accessible simply because the screen looks high-contrast.
+
+### 4.6 Exploratory colour and Pantone workflow
+
+Signal Grove tokens are a starting vocabulary that creates familiarity across the product. They are not a limit on experimentation. The review build may explore broader colour families, tonal ramps, gradients and multi-hue combinations, for example:
+
+- Grove: forest, eucalyptus, lime and deep teal.
+- Aurora: cyan, azure, indigo, violet and cool blue.
+- Spectrum: blue, cyan, lime, amber and coral.
+- Ember: plum, coral, amber and warm neutral tones.
+- Night signal: matte black/ink surfaces with violet, cyan, electric blue or warm accents.
+- Editorial colour studies: restrained pastel/tonal combinations, richer saturated accents or monochrome compositions where content and audience call for them.
+
+These are exploratory colour stories, not mandatory module mappings. New combinations are welcome. Select colours for hierarchy, mood, distinction, readability and cultural context; don't force every module, card or brand moment into the same green treatment. Semantic success, warning, danger and information states should remain recognisable in meaning, but decorative artwork can use a much wider palette.
+
+Pantone may be explored as a physical/print colour reference. Do not invent PMS identifiers or claim an exact Pantone match from a HEX value. Record the official swatch/reference and licensing source if a Pantone reference is adopted, then document the actual digital HEX/RGB/CMYK conversion used for screens or print. Treat Pantone-inspired digital colour exploration as a concept until the official reference is verified.
+
+For brand patterns, use transparent overlays and CSS/SVG variables. The current pattern exercise does not change existing page/card backgrounds. Test the overlay on multiple light, dark and Matte Black surfaces, then keep, adapt or omit it based on readability and composition.
+
+## 5. Typography
+
+| Role | Value |
+| --- | --- |
+| UI and body | Inter, with Noto Sans Devanagari for Hindi, then system fonts |
+| Technical text and numbers | JetBrains Mono, sparingly (counts, IDs, code, ledger values) |
+| Body | 16 px / 24 px, weight 400 |
+| Small | 14 px / 20 px |
+| Section heading | 24 px / 32 px, weight 600 |
+| Card heading | 17 px / 24 px, weight 600 |
+| Page heading | 30 to 48 px, weight 700, fluid |
+| Metric value | JetBrains Mono, 30 px / 36 px, weight 600 |
+
+Use sentence case, tabular numerals for money and counts, and balanced wrapping for headings. Avoid all caps and light weights for small text. Reading lines around 60–75 characters are a useful starting point, adjusted for content, device and typography. Hindi text benefits from generous line-height (around 1.6 as a starting point). Display typefaces may be explored for expressive moments while the dense UI remains easy to read.
+
+## 6. Spacing, shape, elevation and states
+
+| Aspect | Rule |
+| --- | --- |
+| Spacing | 4 px base rhythm is a useful shared starting point: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64; compositions may diverge when a better rhythm is justified |
+| Radius | 6 tags, 10 buttons and inputs, 14 cards and dialogs, 20 feature panels, pill for chips |
+| Elevation | Borders first. Shadows only for real layers: overlay shadow 0 14px 40px at 18% deep teal; scrim 55% deep teal |
+| Surface levels | Page, surface (card), raised (menu, popover), overlay (dialog, toast) |
+| Hover | Subtle tint of the surface or a darker brand shade; never a layout shift |
+| Focus | 3 px outline, 2 px offset, always visible; never removed |
+| Active or pressed | Darker shade and a 1 px downward nudge |
+| Selected | Subtle tint plus a marker (inset bar, check or filled chip), never color alone |
+| Disabled | 50% opacity, not focusable, with a reason shown nearby when it blocks a task |
+
+### 6.1 Whitespace and density
+
+Whitespace is a functional part of hierarchy, emotional tone and readability. Do not compress a layout merely to fit more widgets above the fold. Preserve the 4 px base rhythm and use these density modes:
+
+| Mode | Default use | Guidance |
+| --- | --- | --- |
+| Comfortable | Member dashboard, discovery feeds, profile, forms, standard cards | Default mode; generous separation and touch-friendly controls |
+| Compact | Operations queues, recruiter comparison, dense tables, advanced filters | Reduce row and vertical spacing selectively; never reduce legibility or target size |
+| Reading | Articles, technical answers, learning content and documentation | Narrow measure, clear heading rhythm, generous paragraph/code separation |
+
+Recommended spacing: page title to description 8–12 px; description to first content section 24–32 px; major section separation 40–64 px on desktop; standard card padding 20–24 px and 16 px on narrow mobile; form-field groups 20–24 px. These are starting tokens; screen reviews may adjust by context.
+
+
+Button shades: primary #156152, hover #0F4D41, pressed #0B3D33; lime hover #B5EE3F, pressed #A8DE33; destructive #B42332, hover #9A1C2A, pressed #85161F.
+
+## 7. Layout, navigation and placement
+
+| Element | Rule | Reason |
+| --- | --- | --- |
+| Page container | Content up to 1160 px (1320 px at 1536 px and up); padding 16, 24, then 32 to 40 px at 1280 px and up | Readable lines; dashboards can use width, reading pages cannot |
+| Grid | 12 columns, spans of 3, 4, 6, 8, 12; one column below 768 px; quarter cards two across below 768 px and one below 640 px | Hierarchy by span, not decoration |
+| Breakpoints | 640, 768, 1024, 1280, 1536 | DEC-008 |
+| Sidebar | Persistent left navigation 232 px from 1024 px; filtered by role; active item has a marker | Frequent destinations always visible |
+| Mobile navigation | Bottom bar below 1024 px, horizontally scrollable, icon above label | Thumb reach |
+| Header | Sticky; workspace label, search (Ctrl or Command K), language, theme, notifications, account | Utilities do not compete with content |
+| Page header | Icon tile, one H1, short description, at most one primary action on the right | One obvious task per page |
+| Breadcrumbs | On pages deeper than two levels (position detail, candidate, thread, review) | Orientation and a quick way back |
+| Primary and secondary actions | Primary bottom-right in forms and dialogs, secondary to its left, destructive named by outcome | Matches reading order |
+| Footer | Fees, privacy, terms, contact; not repeated inside the app | Trust links without clutter |
+| Safe areas | Respect device insets for the sticky header and bottom bar | Notched phones |
+| Tables on small screens | Below 768 px a table becomes stacked cards, with the key fact first | Tables do not fit phones |
+
+### 7.1 Layout families
+
+**Editorial Workspace** is used for Community discovery, questions, articles, learning, profiles and member-facing journeys. It prioritises reading comfort, human context, clear content hierarchy and whitespace. Long-form reading columns target approximately 60–75 characters per line; secondary panels are optional rather than permanent.
+
+**Analytical Workspace** is used for Operations, Recruitment dashboards, Community analytics, moderation queues and data-heavy administration. It takes inspiration from the supplied Vantage Admin reference: grouped persistent sidebar, breadcrumb/header, page title and context controls, a strip of 4–5 meaningful KPIs, a primary analytics region, a collapsible contextual right rail, and a detailed table/activity region. Use an approximate 70:30 main-area/right-rail split where it improves the task. Let analytical pages use available viewport width (often 1440–1600 px or fluid) instead of forcing the editorial reading width.
+
+The right rail must be task-specific: filters, assumptions, alerts, suggested next actions or related information. It must not become a dumping ground for unrelated widgets. On tablet it collapses; on mobile it becomes a drawer or inline section. KPI cards show a definition, period and comparison where relevant. Avoid vanity metrics and excessive chart colors.
+
+The two families share the same app shell, semantic tokens, typography, interaction rules and components. Do not force every screen into a dashboard or a card grid.
+
+## 8. Cards and surfaces
+
+Common anatomy: surface background, 1 px border, 14 px radius, 20 px padding (16 on mobile), 10 to 12 px gap, title first, supporting text, then actions. Informational cards are not clickable and have no hover state. Interactive cards have a hover tint, a visible focus ring, one main link, and nested controls that do not conflict.
+
+| Card | Content order | Actions | Notes |
+| --- | --- | --- | --- |
+| Profile card | Avatar, name, role and location, verified skills, completeness | View, message | Never shows compensation or contact details |
+| Member and community card | Avatar, name, reputation, expertise | Follow, mentor request |  |
+| Post (question) card | Title, mode chip, author and time, replies and useful count, status | Open | Status chip carries text and glyph |
+| Job card | Title, company, location and mode, experience, required and preferred skills, fee and experienced-only chips | Apply | Fee shown before the action |
+| Candidate card or row | Name, role, experience, decision and stage chips, score, waiting time | Review, compare | Date of birth never shown to companies |
+| Assessment and learning card | Title, level, state chip, progress, price chip | Start, continue, buy | Locked states say how to unlock |
+| Verification and achievement badge | Label, glyph, skill; evidence detail on click | Open detail | Detail shows who decided, date, expiry |
+| Notification item | Title, message, time, unread marker | Open record | No sensitive data in previews |
+| Stats or metric card | Label, mono value, context or period | Drill in | Every number has a definition |
+| Form section | Heading, why-we-ask text, fields, errors, save | Save, cancel | Sensitive fields explain visibility |
+| Dialog | Title, short body, fields, actions | Confirm, cancel | Full page for long tasks; destructive dialogs name the effect |
+| Empty and error panels | Reason, one next action, retry with filters kept | Retry, clear filter, create | Never a blank screen |
+
+## 9. Icons, imagery and placeholders
+
+- **Icons:** one outline style (Lucide-compatible), 24 px grid, 1.8 px stroke, round caps, drawn in the current text color; 20 px in navigation, 18 px in the header, 22 px in page tiles. Functional icons have an accessible name or visible text; decorative icons are hidden from assistive technology. Do not use an icon where a clear label would do.
+- **Semantic glyphs:** check, exclamation, cross and info on chips and alerts.
+- **Illustration:** subtle network lines, nodes and routing paths in low-opacity eucalyptus or mint; never behind dense text or forms.
+- **Avatars:** initials on a soft module tint when there is no photo; 1:1 crop; the accessible name is the person's name.
+- **Skeletons:** match the final layout; static under reduced motion; announced to assistive technology with a hidden label.
+- **Empty-state graphics:** at most one small line illustration plus text and one action.
+
+
+### 9.1 Curated component, icon and media ecosystem
+
+| Purpose | Preferred source | Adoption rule |
+| --- | --- | --- |
+| Primary shared UI source | shadcn/ui | Source-owned components; adapt to Signal Grove tokens; never leave stock styling unreviewed |
+| Supplementary dashboard/product components | Ingot UI | Curate individual registry items only; inspect dependencies, licence, accessibility and dark-mode coverage; current docs report light mode at launch and dark mode as a later update |
+| Primitive layer for new shadcn projects | Base UI by default; Radix remains supported | First inspect existing dependencies. Do not migrate a stable existing primitive library just to follow a new default; do not mix Base UI and Radix arbitrarily |
+| Styling | Tailwind CSS v4 | One styling system and one token bridge; production builds compile CSS |
+| UI icons | Lucide | Default outline UI icon family |
+| Technology / vendor marks | Simple Icons | Use only for recognised product/vendor identities; follow brand and trademark constraints |
+| Photography / video | Unsplash, Pexels | Use selectively; verify asset and API terms, releases, attribution and hotlink requirements per use |
+| Illustrations | unDraw or PacketPulse-owned SVGs | Keep one coherent illustration style; favour custom PacketPulse assets for core brand moments |
+| Animation assets | LottieFiles, Rive | Use only for meaningful empty states, onboarding or achievement moments; review each asset licence and performance |
+| Charts | Recharts (candidate) | Use semantic chart colors, labels, text summaries and data-table alternatives |
+| Tables | TanStack Table (candidate) | Use when complex sorting, filtering and column behavior justify it |
+| Rich text | Tiptap (candidate) | Review editor accessibility, extensions, sanitisation and content storage before adoption |
+| Toasts | Sonner (candidate) | Toasts are supplemental; important outcomes also persist on the page |
+
+**Primary recommendation:** shadcn/ui is the foundation; Ingot UI is a curated supplement, not a second competing design system. Chakra UI is not the primary choice while Tailwind v4 is the styling standard, because it would introduce a separate styling/theming approach. This is a stack recommendation, not permission to add packages before the repository audit.
+
+**Tailwind CDN rule:** Tailwind Play CDN may be used for standalone mockups, quick experiments and static prototypes. The official documentation states it is development-only and not intended for production. The production Next.js application must compile Tailwind CSS v4 through the project's build integration. Do not depend on the browser CDN for production styling.
+
+**Licensing and provenance:** Record source URL, creator/author where available, licence/terms checked date, attribution requirement, model/property release status where relevant, and local asset owner. Do not scrape or bulk-copy asset catalogues. Prefer optimised, locally managed or approved CDN assets with responsive sizes and lazy loading.
+
+## 10. Interaction patterns
+
+| Component | Behavior |
+| --- | --- |
+| Buttons | Explore primary, secondary, quiet, expressive, module-toned and destructive treatments as the task requires. States: default, hover, focus, pressed, disabled, loading (label stays, repeat clicks blocked). Start around 40 px on desktop and 44 px on touch devices, then validate real touch, keyboard and density needs |
+| Forms | Label above the field, always visible; hint text; validate when the user leaves the field or submits; errors under the field, linked to it and announced; entered data is never cleared on error; long forms show an error summary at the top |
+| Multi-step flows | Step indicator with step names; save and continue later; a Back button that keeps entries; the final step shows a review before submit |
+| Menus, tabs, tooltips | Keyboard operable; tooltips never hold essential information |
+| Dialogs | Labelled by their title; focus moves in and returns to the trigger; Escape and outside click close non-destructive dialogs; background scroll locked; one dialog open at a time |
+| Toasts | About 2.6 seconds; never the only place for required information |
+| Banners and inline alerts | For persistent states; errors use an alert role |
+| Tables and lists | Sortable columns with the sort stated in text; filters shown as removable chips with a Clear all; pagination states the total count; the filter state is kept when returning from a detail page |
+| Charts | Title, unit, a text summary, direct labels or a legend, and a data table alternative; never color alone; series colors come from module accents, not status colors |
+| States | Loading skeleton, empty with one action, error with retry, success shown on the page for high-impact changes, disabled with a reason |
+| Motion | Start around 150–250 ms for common state changes, then tune to purpose, device and motion character; celebratory or ambient motion may be explored where it feels meaningful; reduced-motion alternatives preserve information |
+| Keyboard | Command palette (Ctrl or Command K); roving focus in menus; skip link; focus moves to the page heading on route change |
+
+### 10.1 Motion language and microanimations
+
+Motion may acknowledge an action, explain a state change, help orientation, clarify spatial relationships or contribute to the brand's atmosphere. Explore interaction feedback, ambient waves/pulses and expressive transitions where they improve the experience; adjust intensity to the context rather than enforcing one motion style. Preferred implementation library: Motion for React, subject to dependency audit. Use CSS transitions for simple hover/focus states where a runtime library adds no value.
+
+| Pattern | Target duration | Notes |
+| --- | --- | --- |
+| Button press, bookmark, checkbox and toggle | 120–180 ms | Subtle scale/opacity/colour feedback; no layout shift |
+| Tabs, tooltip, menu, toast and small popover | 150–250 ms | Quick, predictable; preserve focus behavior |
+| Side panel, expandable section and layout transition | 240–350 ms | Use transform/opacity where possible; avoid expensive layout animation |
+| Achievement or verification moment | 350–700 ms | Brief and restrained; one meaningful celebration, not repeated reward loops |
+| Loading | As needed | Skeletons match final layout; no shimmer when reduced motion is active |
+
+Respect `prefers-reduced-motion` and provide a reduced-motion mode. Tune or remove movement that makes reading, focus, chart interpretation or task completion harder. Keep useful state changes and feedback understandable without requiring motion.
+
+## 11. UX writing and content rules
+
+### 11.1 Voice and patterns
+
+| Pattern | Rule | Example |
+| --- | --- | --- |
+| Buttons | Start with a verb; say the outcome | Submit application, Save changes, Start assessment |
+| Errors | What happened, why, how to fix it; no blame | Code expired. Codes last 10 minutes. Request a new code. |
+| Empty states | What this is, why it is empty, how to start | No applications yet. Apply to a job and its progress will appear here. |
+| Confirmations | Name the action and the effect; buttons repeat the action | Withdraw this application? The recruiter will be told. Buttons: Withdraw application, Keep application |
+| Loading | Say what is happening if it takes more than 2 seconds | Reading your resume... |
+| Success | Short and calm; no exclamation marks except real milestones | Skill verified |
+| Sensitive fields | Say why and who sees it | Current CTC. Only recruiters you are forwarded to can see this. |
+| Tooltips | Short, never obvious |  |
+
+Tone by context: success is warm but not loud; errors are kind and specific; warnings are clear and actionable; neutral text is informative and short. Never use urgency or scarcity tricks.
+
+### 11.2 Product vocabulary (use these words everywhere)
+
+| Use | Not |
+| --- | --- |
+| Member | User, candidate (candidate is used only in recruiter screens) |
+| Jobs (member) and Positions (recruiter) | Openings, requisitions |
+| Application | Submission (a lab submission is a Submission) |
+| Forwarded | Sent, shared |
+| Verified skill | Certified skill (certification is its own label) |
+| Evidence | Proof, documents |
+| Placement fee | Commission, charge |
+
+### 11.3 Formats and limits **\[REVIEW\]**
+
+| Item | Rule |
+| --- | --- |
+| Dates and times | 17 Oct 2026, 3:30 pm IST; the zone is always shown on interview times |
+| Money | Rupee sign with Indian digit grouping, for example 12,50,000; annual pay also as lakhs per annum (12.5 LPA) |
+| Numbers | Tabular figures; large counts shortened (1.2k) with the full value on hover or focus |
+| Names and titles | Names up to 60 characters; question titles 8 to 120; position titles up to 80; skill chips up to 40 |
+| Truncation | Card titles stop at 2 lines; long text ends with an ellipsis and a Show more control; truncated text is available in full to assistive technology |
+| Sensitive data | Masked by default in lists (for example the last 4 digits of a phone number); shown in full only where DEC-015 allows |
+
+## 12. Edge cases every screen handles
+
+| Case | Behavior |
+| --- | --- |
+| Very long names, titles and skill lists | Wrap or truncate as above; never push layout sideways |
+| Hindi and longer text | Allow about 30% more length; no fixed-width buttons; Devanagari line height 1.6 |
+| Slow connection | Skeletons within 100 ms; a retry message after 10 seconds; uploads show progress and can be retried |
+| Missing data | Show a dash with a reason where helpful (for example Not provided), never a fake zero |
+| Zero results | Say what was searched and offer Clear filters |
+| No permission | Explain in plain words and give a valid destination; never a blank screen |
+| Offline or failed save | Keep entries on screen; say that it was not saved; retry button |
+| Session ended | Return to the same page after sign-in; keep unsent form entries where possible |
+| Large lists | Paginate or load more with a count; never load everything at once |
+| Duplicate actions | Disable the button while working; a second click does nothing |
+
+## 13. Accessibility standards
+
+Target WCAG 2.2 AA in both themes (DEC-007, PRD-049).
+
+| Area | Standard | Test |
+| --- | --- | --- |
+| Contrast | Text 4.5:1; large text and controls 3:1 | Computed per token pair; automated scans |
+| Keyboard | Everything operable; logical order; visible focus | Keyboard-only journeys |
+| Structure | Landmarks, one H1, no skipped levels | Automated scan and manual review |
+| Names and forms | Every control named; errors announced and linked | Scan plus screen reader pass |
+| Targets | At least 40 px for buttons and inputs; 24 px minimum anywhere | Visual review |
+| Status | Text and glyph with every color | Review checklist |
+| Zoom and reflow | Usable at 200% and 320 px wide with no sideways page scroll | Manual and automated |
+| Motion | Respect reduced motion | Emulated setting test |
+| Real assistive technology | A screen reader pass on onboarding, apply, assessment, verification and recruiter review each release | Manual, notes kept |
+
+The prototype's automated scans found no violations, but they cannot measure contrast or layout, and no real screen reader testing has been done (RISK-10).
+
+## 14. Governance and use by developers
+
+- **One source of values.** Color, type, spacing, radius, elevation and motion are defined once in the token file that came with the reference prototype. Components use token names only; raw values appear nowhere else.
+- **New tokens and components.** A new token needs a reason, a light and dark value, a contrast result and a change-log entry. A new component is proposed with its states, accessibility notes and a visual example of every state; an existing component changes only through a reviewed change that lists what else it affects.
+- **Versioning.** The design system has version numbers (major for a visual or behavior break). Every release is listed in Document 1's change log.
+- **Decisions.** A color, type or component decision is recorded as a DEC before it is built.
+- **How to build from it.** Developers map these tokens to the existing styling setup; exact files are found in the repository audit (Document 4). Design specifications describe what should exist; only items marked PV were built, and only in the prototype.
+
+- **Component registry.** Create a PacketPulse-owned shared component layer: base primitives (`ui`), cross-product components (`shared`) and module compositions (`community`, `learning`, `recruitment`, `payments`, `operations`). Use wrappers and variants so external library updates do not dictate the product API. A component is added once and reused; module-specific components must still consume common semantic tokens.
+- **Component documentation.** Maintain a live component catalogue (Storybook or an equivalent already present in the repository), showing variants, responsive states, loading/empty/error/disabled states, keyboard behavior, light and dark themes, and copyable usage examples. Add screenshot/visual regression coverage for critical shared components.
+- **Primitive choice.** For a new shadcn/ui project, Base UI is currently the documented default; Radix is still supported. For an existing app, inspect `package.json`, lockfile and actual components first. Do not perform a wholesale primitive migration without a concrete benefit and an approved task.
+- **Production styling.** Tailwind Play CDN is prototype-only. Production Next.js uses compiled Tailwind v4 via the project's build pipeline. Keep tokens in CSS variables and expose them as semantic Tailwind utilities; no page-level raw colors.
+- **External dependency review.** Before adoption, record package version, licence, maintenance state, accessibility behavior, bundle/runtime impact, React/Next compatibility, theme support and migration path. Keep a component-source register.
+- **Experimental controls.** New motion, automated verification, recommendation and AI-assisted experiences may be included behind feature flags with telemetry and a defined review window. The review outcome must be recorded in Document 1 and the next-build change log.
+
+
+## 14.1 Resources experience design rules
+
+The Resources area is a first-class Community knowledge library, not a generic file dump. Use a calm, curated discovery surface with clear search, category/format/technology/difficulty filters, featured collections and resource cards that communicate type, topic, author, difficulty, estimated time, update/review date and save state. A card must explain why a resource is useful before asking a member to open it.
+
+The resource-detail view is a reading/work surface: document or media preview is primary; table of contents and resource metadata are secondary rails; source, author, attribution, licence, version and review date are visible; related resources and discussion are discoverable without competing with the main content. The right rail can collapse. For long documents, preserve reading position and keyboard navigation.
+
+Resource submission uses a three-step wizard: **Details → Content → Review & publish**. Accept upload, external URL or authored article. Show the real file lifecycle (queued, uploading, paused, processing/scanning, complete, failed, canceled, rejected); never fake progress. Capture author/source/attribution and usage rights before publishing. New external or uploaded resources may enter review; show the submitter the status and any changes required.
+
+Saved resources combine an all-saved list, reading list, custom collections, recently viewed and continue-reading panel. Collections must have explicit private/shared visibility. Avoid making the user maintain duplicate lists when a simple bookmark is enough.
+
+## 14.2 Signup, onboarding, profile and account rules
+
+**Signup should feel like a welcome, not an application form.** Use a split layout on wide screens: a brand/story panel with an understated engineering-network visual and a compact form panel. On mobile, collapse to a single focused form. Offer email and password/passkey as the reliable baseline; Google/GitHub options may appear in the prototype, but must be configured and security-reviewed before real authentication is enabled. Explain why email verification is needed and keep recovery visible.
+
+Onboarding is progressive and skippable for optional steps. Use a visible stepper for Role → Interests → Goals. Role choices include Student, Engineer, Specialist, Mentor and Recruiter; interests use the canonical skill taxonomy; goals include Learn, Practice, Contribute, Mentor and Find opportunities. Recommendations must be editable later. Do not ask for a resume or all employment details before the member understands the value of joining unless a protected workflow requires them.
+
+**Profile and Account are separate destinations.** Profile is the member's professional and community identity. Account is the member's control centre for personal data, privacy, notifications, security, sessions, linked accounts, data rights and billing. A profile preview offers self, community-member and recruiter-after-forwarding perspectives; it must apply the real field-level visibility rules. Public web visibility remains opt-in/later and is off by default.
+
+Profile layout: identity hero with avatar/name/headline/location, a clear edit action, audience-aware verification indicators and tabs for Overview, Skills, Contributions, Experience, Learning/Certifications, Activity and Achievements where available. Separate self-declared, assessment-verified, experience-verified, certification-verified and PP-verified states; never let colour alone communicate verification. Optional profile-completeness prompts are supportive, dismissible and never block functionality or shame users. An optional identity timeline records meaningful milestones only, with visibility controls.
+
+Account settings use spacious grouped cards and dedicated detail pages: Personal information; Profile visibility; Notifications; Login & security; Sessions; Connected accounts; Privacy & data rights; Billing & payments (where applicable). Destructive actions sit in a clearly separated danger zone, explain consequences and require re-authentication/step-up where appropriate.
+
+## 14.3 Experimental visual and colour freedom
+
+The owner has explicitly approved creative experimentation with patterns, components, colour, imagery, typography and interaction treatment in the review build (DEC-049). Designers may explore alternative module accents, featured-resource treatments, profile identity motifs and hero compositions. Use A/B or side-by-side concepts where a choice is uncertain. Record each variant and its design hypothesis.
+
+This freedom does not remove semantic meaning or accessibility. Text/background and control contrast must be checked; status labels still require text and glyph; module colours must not impersonate success/warning/error; colour must not be the only differentiator. The production palette is selected after the review evidence, not merely because a prototype looks striking.
+
+## 14.4 Creative design freedom and flexible visual exploration
+
+The owner explicitly directs the design team to be open, creative and experimental. Signal Grove unifies the product; it does not prescribe one colour, one motif, one layout, one radius, one card style or one animation language for every screen. The team may explore brand and module token combinations, tonal ramps, gradients, Pantone-inspired references, editorial display typography, layered illustrations, geometric patterns, waves, pulses, data lines, node meshes, security motifs, and new compositions. Explore ideas that have not been listed here when they create a clearer, more useful or more memorable experience.
+
+The current Signal Grove tokens, module accents and semantic colours are a palette to work from, not an exclusive colour cage. Forest/teal/lime remain important brand options, while indigo, blue, plum, violet, cyan, amber, coral and future palette explorations may be used where they fit the content and mood. Status meanings remain clear and accessible; decorative colour is not a status indicator. Pantone references may be explored during brand/print work, then mapped to tested digital HEX/RGB values. Do not claim a Pantone match until an actual swatch/guide selection has been verified.
+
+### Pattern overlays, not replacement backgrounds
+
+Brand patterns should be designed as independent visual layers that can sit on top of existing page/card surfaces. Do not alter or replace the underlying background merely to apply a motif. Patterns may be inline SVG, CSS, masks or carefully optimised raster assets; prefer scalable, theme-aware, recolourable and crop-friendly sources. Pattern families are suggestions, not a closed inventory: packet routes, node constellations, signal waves, pulse trails, radar echoes, secure layers, data flows and packet matrices are starting points. New families and combinations are welcome.
+
+Patterns can be subtle, expressive, cropped, partial, animated or static. Their colours may draw from brand, module, semantic and experimental tokens. Use them where they strengthen recognition or atmosphere: card corners, card headers, hero overlays, section dividers, profile covers, resource features, empty states, analytics headers and branded moments. Keep important text and controls readable; allow the pattern to disappear when it competes with the task.
+
+### Design exploration loop
+
+For meaningful alternatives, create two or more visual directions when useful; present a compact concept board; state the experience hypothesis; compare with real content and responsive layouts; gather team feedback in the agreed review window; and decide Retain, Refine, Restrict or Remove for the next build. Do not reject an idea only because it is not already in the token catalogue. Do not keep a design only because it is visually striking.
+
+## 14.5 Parent-child and nested-screen experience
+
+Treat a complex section as a navigable workspace, not a pile of modals. Preserve the parent context while a user enters a child workflow. Use the URL as the durable location for substantial pages and shareable detail; use a contextual drawer/sheet for quick inspection; use inline expansion for small supplementary detail. A route-backed drawer is appropriate when the child should be deep-linkable. Avoid stacked dialogs and nested modals.
+
+Keep breadcrumbs, local section navigation, a visible parent return path and clear page titles. Preserve filters, search terms, selected row, scroll position and keyboard focus when returning to the parent where feasible. Browser Back/Forward must match the visible hierarchy. On mobile, child workflows generally become a full-screen route with an obvious back action; the user should not need to understand a desktop split pane. Make panel transitions responsive to the task, not an arbitrary maximum nesting depth.
+
+## 14.6 Media, recordings and embedded-resource experience
+
+Treat media as a first-class resource type. The player should feel native to PacketPulse while making the actual source clear. Design for direct video/audio files, adaptive streams, and approved external providers. Support play/pause, seek, volume, playback speed, quality where available, captions/subtitles, chapters, transcript access, fullscreen, keyboard operation, playback progress/resume and provider errors. Picture-in-picture and casting may appear where the browser/device/provider supports them. Do not present unavailable controls as working.
+
+A recording detail may combine the player with a transcript, chapter list, resource metadata, notes, related resources and discussion. Let the user choose a focused/theater reading mode and preserve the resource's parent context. A recording card can show duration, provider/source, caption availability, progress and a meaningful thumbnail. No autoplay with sound. Respect reduced motion, data-saving and privacy choices.
+
+File previews should be type-aware, not one generic embedded object. PDF, image, audio/video, text/Markdown/code and CSV previews can use suitable viewers. Office files should use an isolated preview/conversion process or a separately licensed editor; unsupported or unsafe files should offer clear download/recovery options. Never silently render arbitrary HTML, macros or user-provided iframe code.
+
+### Sources
+
+- Video.js 10.7.0 changelog (24 Nov 2026): https://videojs.org/changelog
+- Video.js 10 React install: https://videojs.org/docs/guides/installation/react
+- Uppy React integration: https://uppy.io/docs/react/
+- Uppy Tus uploader: https://uppy.io/docs/tus/
+- React-PDF: https://github.com/wojtekmaj/react-pdf
+- Shaka Player: https://github.com/shaka-project/shaka-player
+- ONLYOFFICE licensing FAQ: https://helpcenter.onlyoffice.com/docs/installation/community/faq
+
+These are preferred review-build directions, not evidence that packages are installed. Check source repository, versions, licenses, provider policies, browser support and security requirements before production adoption.
+
+## 15. Revision history
+
+| Date | Version | Change |
+|---|---:|---|
+| 26 Nov 2026 | 4.5 | Owner clarified open creative exploration; added DES-031 and distinguished flexible aesthetic preferences from essential experience/safety checks; preserved existing backgrounds for transparent pattern overlays |
+| 26 Nov 2026 | 4.4 | Added DES-022 to DES-030; expanded colour, pattern, layout, typography and motion exploration; refined nested UX, media and component-library guidance |
+| 25 Nov 2026 | 4.1 | Added Resources, Signup, Profile and Account design rules; audience-aware profile previews and Approved Prototype status semantics |
+| 24 Nov 2026 | 4.0 | Added DES-013 to DES-021; Matte Black analytical reference; Editorial/Analytical workspaces; whitespace and density modes; curated component/media ecosystem; Tailwind v4 production rule; microanimation guidance |
+| 17 Oct 2026 | 3.0 | Signal Grove baseline: palette, module accents, typography, spacing, interaction patterns, accessibility and governance |

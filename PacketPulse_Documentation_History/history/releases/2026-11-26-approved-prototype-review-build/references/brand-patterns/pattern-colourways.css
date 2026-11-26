@@ -1,0 +1,45 @@
+/* PacketPulse pattern colourways — exploratory, not fixed theme assignments.
+   Apply to transparent brand-pattern SVG/React components only.
+   These variables do not alter page/card backgrounds. */
+:root {
+  --pp-pattern-a: #16C6DF;
+  --pp-pattern-b: #635BCA;
+  --pp-pattern-c: #F07878;
+  --pp-pattern-highlight: #C7FE53;
+}
+[data-pattern-palette="grove"] {
+  --pp-pattern-a: #156152;
+  --pp-pattern-b: #8BBBA5;
+  --pp-pattern-c: #002631;
+  --pp-pattern-highlight: #C7FE53;
+}
+[data-pattern-palette="aurora"] {
+  --pp-pattern-a: #16C6DF;
+  --pp-pattern-b: #3989FF;
+  --pp-pattern-c: #9876E8;
+  --pp-pattern-highlight: #F07878;
+}
+[data-pattern-palette="spectrum"] {
+  --pp-pattern-a: #3989FF;
+  --pp-pattern-b: #16C6DF;
+  --pp-pattern-c: #9876E8;
+  --pp-pattern-highlight: #C7FE53;
+}
+[data-pattern-palette="ember"] {
+  --pp-pattern-a: #6F2A5F;
+  --pp-pattern-b: #F07878;
+  --pp-pattern-c: #FFB547;
+  --pp-pattern-highlight: #FFD166;
+}
+[data-pattern-palette="night-signal"] {
+  --pp-pattern-a: #3989FF;
+  --pp-pattern-b: #9876E8;
+  --pp-pattern-c: #16C6DF;
+  --pp-pattern-highlight: #F07878;
+}
+[data-pattern-palette="soft-prism"] {
+  --pp-pattern-a: #8BBBA5;
+  --pp-pattern-b: #B1ACFE;
+  --pp-pattern-c: #A6DCE5;
+  --pp-pattern-highlight: #F3A7B8;
+}

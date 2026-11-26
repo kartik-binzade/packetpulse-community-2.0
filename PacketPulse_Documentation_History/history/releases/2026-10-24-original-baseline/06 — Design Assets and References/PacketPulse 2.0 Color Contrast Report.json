@@ -1,0 +1,226 @@
+{
+  "revision": "1.2",
+  "approval": "Approved 2026-10-19",
+  "contrast_pairs": [
+    {
+      "label": "Primary text / canvas",
+      "pair": "#F4F7F6 on #0B1114",
+      "ratio": 17.64,
+      "result": "AA / AAA"
+    },
+    {
+      "label": "Secondary text / canvas",
+      "pair": "#A3B4B7 on #0B1114",
+      "ratio": 8.85,
+      "result": "AA / AAA"
+    },
+    {
+      "label": "Muted/disabled text / canvas",
+      "pair": "#819699 on #0B1114",
+      "ratio": 6.12,
+      "result": "AA"
+    },
+    {
+      "label": "Card text / card",
+      "pair": "#F4F7F6 on #101B1E",
+      "ratio": 16.27,
+      "result": "AA / AAA"
+    },
+    {
+      "label": "Primary action label",
+      "pair": "#FFFFFF on #156152",
+      "ratio": 7.33,
+      "result": "AAA"
+    },
+    {
+      "label": "Primary hover label",
+      "pair": "#F4F7F6 on #1B7564",
+      "ratio": 5.16,
+      "result": "AA"
+    },
+    {
+      "label": "Signal lime label",
+      "pair": "#0B1114 on #C7FE53",
+      "ratio": 16.05,
+      "result": "AAA"
+    },
+    {
+      "label": "Control border / card",
+      "pair": "#71878A on #101B1E",
+      "ratio": 4.62,
+      "result": "Non-text 3:1"
+    },
+    {
+      "label": "Control border / selected",
+      "pair": "#71878A on #142327",
+      "ratio": 4.26,
+      "result": "Non-text 3:1"
+    },
+    {
+      "label": "Focus ring / canvas",
+      "pair": "#96D294 on #0B1114",
+      "ratio": 10.81,
+      "result": "Clear focus marker"
+    },
+    {
+      "label": "Destructive label",
+      "pair": "#0B1114 on #D76A7A",
+      "ratio": 5.64,
+      "result": "AA"
+    },
+    {
+      "label": "Success text / container",
+      "pair": "#86E0B0 on #123B32",
+      "ratio": 7.84,
+      "result": "AAA"
+    },
+    {
+      "label": "Warning text / container",
+      "pair": "#FFD17A on #46341C",
+      "ratio": 8.29,
+      "result": "AAA"
+    },
+    {
+      "label": "Danger text / container",
+      "pair": "#FF9FAD on #45252C",
+      "ratio": 6.96,
+      "result": "AA"
+    },
+    {
+      "label": "Info text / container",
+      "pair": "#B8C9D2 on #273942",
+      "ratio": 7.04,
+      "result": "AAA"
+    },
+    {
+      "label": "Community accent / soft",
+      "pair": "#96D294 on #172D25",
+      "ratio": 8.3,
+      "result": "AAA"
+    },
+    {
+      "label": "Learning accent / soft",
+      "pair": "#B1ACFE on #26235A",
+      "ratio": 6.94,
+      "result": "AA"
+    },
+    {
+      "label": "Recruitment accent / soft",
+      "pair": "#8DB8E8 on #12304D",
+      "ratio": 6.53,
+      "result": "AA"
+    },
+    {
+      "label": "Payments accent / soft",
+      "pair": "#E4A8D8 on #3A1F36",
+      "ratio": 7.62,
+      "result": "AAA"
+    },
+    {
+      "label": "Community accent / deep-teal canvas",
+      "pair": "#96D294 on #001D21",
+      "ratio": 9.97,
+      "result": "AAA; Community-only canvas"
+    },
+    {
+      "label": "Practice accent / raised surface",
+      "pair": "#B1ACFE on #1A2B30",
+      "ratio": 7.12,
+      "result": "AAA; localized code/lab chrome"
+    },
+    {
+      "label": "Assessments accent / green identity zone",
+      "pair": "#96D294 on #172D25",
+      "ratio": 8.3,
+      "result": "AAA; identity accent, not status semantic"
+    }
+  ],
+  "application_addendum": "DEC-036 (2026-10-19): module-specific section identity usage; existing palette values unchanged.",
+  "light_theme_contrast_pairs": [
+    {
+      "label": "Primary text / light canvas",
+      "pair": "#152025 on #F5F8F6",
+      "ratio": 15.52,
+      "result": "AAA"
+    },
+    {
+      "label": "Muted text / light canvas",
+      "pair": "#52615B on #F5F8F6",
+      "ratio": 6.1,
+      "result": "AA"
+    },
+    {
+      "label": "Primary action label",
+      "pair": "#FFFFFF on #156152",
+      "ratio": 7.33,
+      "result": "AAA"
+    },
+    {
+      "label": "Community accent / soft",
+      "pair": "#156152 on #E8F4EF",
+      "ratio": 6.5,
+      "result": "AA"
+    },
+    {
+      "label": "Community hero text",
+      "pair": "#F4F7F6 on #001D21",
+      "ratio": 16.27,
+      "result": "AAA"
+    },
+    {
+      "label": "Learning accent / soft",
+      "pair": "#635BCA on #F0EFFF",
+      "ratio": 4.77,
+      "result": "AA"
+    },
+    {
+      "label": "Recruitment accent / soft",
+      "pair": "#1D4F86 on #E8F0FA",
+      "ratio": 7.27,
+      "result": "AAA"
+    },
+    {
+      "label": "Payments accent / soft",
+      "pair": "#6F2A5F on #F7EBF4",
+      "ratio": 8.35,
+      "result": "AAA"
+    },
+    {
+      "label": "Success text / container",
+      "pair": "#166534 on #E8F6ED",
+      "ratio": 6.4,
+      "result": "AA"
+    },
+    {
+      "label": "Warning text / container",
+      "pair": "#854D0E on #FFF4D6",
+      "ratio": 6.25,
+      "result": "AA"
+    },
+    {
+      "label": "Danger text / container",
+      "pair": "#9F2534 on #FCEBED",
+      "ratio": 6.54,
+      "result": "AA"
+    },
+    {
+      "label": "Information text / container",
+      "pair": "#475569 on #F1F5F9",
+      "ratio": 6.92,
+      "result": "AA"
+    },
+    {
+      "label": "Control boundary / white card",
+      "pair": "#738279 on #FFFFFF",
+      "ratio": 4.04,
+      "result": "AA large/non-text"
+    },
+    {
+      "label": "Focus ring / light canvas",
+      "pair": "#156152 on #F5F8F6",
+      "ratio": 6.86,
+      "result": "AA"
+    }
+  ],
+  "application_addenda": "DEC-036 (2026-10-19): dark-theme module identity usage; DEC-037 (2026-10-19): same localized module identity principle applied to light theme. Existing palette values unchanged."
+}

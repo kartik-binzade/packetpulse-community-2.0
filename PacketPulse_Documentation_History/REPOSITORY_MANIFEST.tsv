@@ -1,0 +1,205 @@
+path	bytes
+.gitignore	56
+GITHUB_SETUP.md	986
+HISTORICAL_FILES.sha256	26708
+README.md	3493
+SOURCE_CHECKSUMS.sha256	858
+current/APPROVED_PROTOTYPE_REVIEW_REGISTER.md	4909
+current/CHANGELOG.md	10104
+current/CLAUDE_DISCUSSION_HANDOFF_2026-11-26.md	2036
+current/CLAUDE_UPDATE_HANDOFF.md	7018
+current/PacketPulse 2.0 — 1. Product Guide Vision, Requirements, Decisions.md	76815
+current/PacketPulse 2.0 — 2. Design System and UX Guide.md	54862
+current/PacketPulse 2.0 — 3. Users, Screens and Page Flows.md	59963
+current/PacketPulse 2.0 — 4. Delivery Plan and Developer Handoff.md	65643
+current/PacketPulse 2.0 — 5. Component Ecosystem, UI Patterns and Library Registry.md	101124
+current/README.md	4511
+current/TECHNICAL_SOURCE_REGISTER.md	4569
+current/UPDATE_SUMMARY.md	5026
+design/brand-patterns/PP-PAT-001-packet-routes.svg	953
+design/brand-patterns/PP-PAT-002-node-constellation.svg	850
+design/brand-patterns/PP-PAT-003-signal-waves.svg	911
+design/brand-patterns/PP-PAT-004-pulse-trails.svg	956
+design/brand-patterns/PP-PAT-005-radar-echo.svg	828
+design/brand-patterns/PP-PAT-006-secure-layers.svg	741
+design/brand-patterns/PP-PAT-007-data-flow.svg	925
+design/brand-patterns/PP-PAT-008-packet-matrix.svg	666
+design/brand-patterns/manifest.json	2805
+design/brand-patterns/pattern-colourways.css	1251
+design/brand-patterns/preview-PP-PAT-001-packet-routes.png	2755
+design/brand-patterns/preview-PP-PAT-002-node-constellation.png	12687
+design/brand-patterns/preview-PP-PAT-003-signal-waves.png	17623
+design/brand-patterns/preview-PP-PAT-004-pulse-trails.png	3626
+design/brand-patterns/preview-PP-PAT-005-radar-echo.png	14190
+design/brand-patterns/preview-PP-PAT-006-secure-layers.png	11961
+design/references/generated-concepts/REF-07-community-technical-questions-design.png	1817963
+design/references/generated-concepts/REF-08-community-resources-design.png	1830627
+design/references/generated-concepts/REF-09-signup-profile-account-design.png	1707419
+design/references/generated-concepts/a_clean_dark_ui_mockup_of_a_web_app_packetpulse.png	1817963
+design/references/generated-concepts/a_clean_graphic_design_overlay_asset_sheet_on_a_tr.png	1948048
+design/references/generated-concepts/a_dark_modern_ui_ux_showcase_image_with_a_futuris.png	1707419
+design/references/generated-concepts/a_dark_ui_mockup_collage_of_a_web_app_dashboard_p.png	1830627
+design/references/generated-concepts/a_wide_dark_futuristic_tech_themed_abstract_wallpa.png	1729737
+design/references/ui-inspiration/REF-00-matte-black-analytical-dashboard.jpg	133120
+design/references/ui-inspiration/REF-01-spacious-people-analytics-dashboard.jpg	305735
+design/references/ui-inspiration/REF-02-file-upload-in-progress.jpg	60669
+design/references/ui-inspiration/REF-03-file-upload-complete-compact.jpg	36377
+design/references/ui-inspiration/REF-04-file-upload-complete-actions.jpg	46699
+design/references/ui-inspiration/REF-05-perspective-card-carousel.jpg	122846
+design/references/ui-inspiration/REF-06-numbered-feature-cards.jpg	139414
+design/references/user-supplied/256201.jpg	98541
+design/references/user-supplied/257615.jpg	93292
+design/references/user-supplied/257622.jpg	16996
+design/references/user-supplied/257629.jpg	8968
+design/references/user-supplied/257634.jpg	12120
+design/references/user-supplied/257635.jpg	38076
+design/references/user-supplied/257636.jpg	40218
+design/tokens/experiments/2026-11-26/PacketPulse_2.0_Design_Color_System_v3.pdf	84598
+design/tokens/history/2026-10-24/PacketPulse-2.0-Color-Tokens.css	7469
+discussions/2026-11-26-project-memory-and-documentation-repository.md	4699
+discussions/PacketPulse 2.0 — Discussion Record — 25 November 2026.md	20351
+discussions/PacketPulse 2.0 — Discussion Record — Media, Nested UX and Brand Patterns — 26 November 2026.md	11147
+discussions/PacketPulse 2.0 — Discussion Record — Open Creative Direction and Pattern Overlays — 26 November 2026.md	4161
+discussions/PacketPulse 2.0 — Discussion Record — Resources and Identity Experiences — 25 November 2026.md	16780
+governance/DECISION_REGISTER.md	14343
+governance/DOCUMENT_VERSION_CROSSWALK.md	923
+governance/HISTORICAL_GAPS.md	4176
+governance/MASTER_CHANGELOG.md	10229
+governance/PROJECT_EVOLUTION_AND_MEMORY.md	8879
+governance/SOURCE_INDEX.md	3353
+governance/TOKEN_HISTORY.md	7366
+history/releases/2026-10-24-original-baseline/00 — README and Change Log.md	3465
+history/releases/2026-10-24-original-baseline/00 — Team Change Log.md	1657
+history/releases/2026-10-24-original-baseline/01 — Product Guide Vision, Requirements and Decisions v4.2.docx	71248
+history/releases/2026-10-24-original-baseline/01 — Product Guide Vision, Requirements and Decisions v4.2.md	53804
+history/releases/2026-10-24-original-baseline/01 — Product Guide Vision, Requirements and Decisions v4.2.pdf	591770
+history/releases/2026-10-24-original-baseline/02 — Design System and UX Guide v3.6.docx	58249
+history/releases/2026-10-24-original-baseline/02 — Design System and UX Guide v3.6.md	37383
+history/releases/2026-10-24-original-baseline/02 — Design System and UX Guide v3.6.pdf	301624
+history/releases/2026-10-24-original-baseline/03 — Users, Screens and Page Flows v2.2.docx	56880
+history/releases/2026-10-24-original-baseline/03 — Users, Screens and Page Flows v2.2.md	29999
+history/releases/2026-10-24-original-baseline/03 — Users, Screens and Page Flows v2.2.pdf	379592
+history/releases/2026-10-24-original-baseline/04 — Delivery Plan and Developer Handoff v3.2.docx	66615
+history/releases/2026-10-24-original-baseline/04 — Delivery Plan and Developer Handoff v3.2.md	44393
+history/releases/2026-10-24-original-baseline/04 — Delivery Plan and Developer Handoff v3.2.pdf	603150
+history/releases/2026-10-24-original-baseline/05 — UI Component Design System v1.3.docx	45499
+history/releases/2026-10-24-original-baseline/05 — UI Component Design System v1.3.md	15742
+history/releases/2026-10-24-original-baseline/05 — UI Component Design System v1.3.pdf	136585
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Approved Color System — Revision 1.2.pdf	155787
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Dark Theme Preview.png	370296
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Design System Upgrade Brief — Source.md	25086
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Generated UI Design-System Inspiration (Illustrative Only).png	1597286
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Light Theme Preview.png	393438
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/Light-Dark Theme Preview.html	43316
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/PacketPulse 2.0 Color Contrast Report.json	5443
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/PacketPulse 2.0 Color Tokens.css	7469
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/PacketPulse 2.0 — Design System Overview Board.pdf	248136
+history/releases/2026-10-24-original-baseline/06 — Design Assets and References/PacketPulse 2.0 — Design System Overview Board.png	214029
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/CHANGELOG.md	6569
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/CLAUDE_UPDATE_HANDOFF.md	5921
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/PacketPulse 2.0 — 1. Product Guide Vision, Requirements, Decisions.md	57568
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/PacketPulse 2.0 — 2. Design System and UX Guide.md	34316
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/PacketPulse 2.0 — 3. Users, Screens and Page Flows.md	33662
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/PacketPulse 2.0 — 4. Delivery Plan and Developer Handoff.md	47125
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/PacketPulse_2.0_Design_Color_System_v2.pdf	79299
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/README.md	1188
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/UPDATE_SUMMARY.md	6531
+history/releases/2026-11-24-update-set/PacketPulse_2.0_Update_2026-11-24/references/dashboard-reference.jpg	98541
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/CHANGELOG.md	8236
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/CLAUDE_DISCUSSION_HANDOFF_2026-11-25.md	2100
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/CLAUDE_UPDATE_HANDOFF.md	5921
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — 1. Product Guide Vision, Requirements, Decisions.md	57568
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — 2. Design System and UX Guide.md	34316
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — 3. Users, Screens and Page Flows.md	33662
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — 4. Delivery Plan and Developer Handoff.md	47125
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — 5. Component Ecosystem, UI Patterns and Library Registry.md	63883
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse 2.0 — Discussion Record — 25 November 2026.md	20351
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/PacketPulse_2.0_Design_Color_System_v2.pdf	79299
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/README.md	2086
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/UPDATE_SUMMARY.md	6531
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-00-matte-black-analytical-dashboard.jpg	133120
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-01-spacious-people-analytics-dashboard.jpg	305735
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-02-file-upload-in-progress.jpg	60669
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-03-file-upload-complete-compact.jpg	36377
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-04-file-upload-complete-actions.jpg	46699
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-05-perspective-card-carousel.jpg	122846
+history/releases/2026-11-25-discussion/PacketPulse_2.0_Discussion_2026-11-25/references/ui-inspiration/REF-06-numbered-feature-cards.jpg	139414
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/APPROVED_PROTOTYPE_REVIEW_REGISTER.md	3509
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/CHANGELOG.md	5293
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/CLAUDE_DISCUSSION_HANDOFF.md	750
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/CLAUDE_UPDATE_HANDOFF.md	5283
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — 1. Product Guide Vision, Requirements, Decisions.md	64007
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — 2. Design System and UX Guide.md	39630
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — 3. Users, Screens and Page Flows.md	49359
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — 4. Delivery Plan and Developer Handoff.md	50601
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — 5. Component Ecosystem, UI Patterns and Library Registry.md	78810
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — Discussion Record — 25 November 2026.md	20351
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse 2.0 — Discussion Record — Resources and Identity Experiences — 25 November 2026.md	16780
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/PacketPulse_2.0_Design_Color_System_v2.pdf	79299
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/README.md	1941
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/UPDATE_SUMMARY.md	2227
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/ASSET_MANIFEST.json	2143
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-00-matte-black-analytical-dashboard.jpg	98541
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-01-spacious-people-dashboard.jpg	93292
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-02-file-upload-progress.jpg	16996
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-03-file-upload-complete-compact.jpg	8968
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-04-file-upload-complete-actions.jpg	12120
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-05-perspective-card-carousel.jpg	38076
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-06-numbered-feature-cards.jpg	40218
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-07-community-technical-questions-design.png	1817963
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-08-community-resources-design.png	1830627
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-09-signup-profile-account-design.png	1707419
+history/releases/2026-11-25-review-build/PacketPulse_2.0_Review_Build_2026-11-25/references/design-inspiration/REF-10-six-reference-contact-sheet.jpg	115267
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/APPROVED_PROTOTYPE_REVIEW_REGISTER.md	4909
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/CHANGELOG.md	9775
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/CLAUDE_DISCUSSION_HANDOFF.md	936
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/CLAUDE_DISCUSSION_HANDOFF_2026-11-26.md	2036
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/CLAUDE_UPDATE_HANDOFF.md	7018
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/COMPONENT_REGISTRY_ADDITIONS.json	6264
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — 1. Product Guide Vision, Requirements, Decisions.md	75899
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — 2. Design System and UX Guide.md	53946
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — 3. Users, Screens and Page Flows.md	59047
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — 4. Delivery Plan and Developer Handoff.md	64727
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — 5. Component Ecosystem, UI Patterns and Library Registry.md	100208
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — Discussion Record — 25 November 2026.md	20351
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — Discussion Record — Media, Nested UX and Brand Patterns — 26 November 2026.md	11147
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — Discussion Record — Open Creative Direction and Pattern Overlays — 26 November 2026.md	4161
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse 2.0 — Discussion Record — Resources and Identity Experiences — 25 November 2026.md	16780
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse_2.0_Design_Color_System_v3.pdf	84598
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/PacketPulse_2.0_Media_Nested_UX_and_Brand_Pattern_Reference_v2.pdf	18481
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/README.md	4182
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/TECHNICAL_SOURCE_REGISTER.md	4569
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/UPDATE_SUMMARY.md	5026
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ASSET_MANIFEST.json	2325
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-001-packet-routes.svg	953
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-002-node-constellation.svg	850
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-003-signal-waves.svg	911
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-004-pulse-trails.svg	956
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-005-radar-echo.svg	828
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-006-secure-layers.svg	741
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-007-data-flow.svg	925
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/PP-PAT-008-packet-matrix.svg	666
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/manifest.json	2805
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/pattern-colourways.css	1251
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-001-packet-routes.png	2755
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-002-node-constellation.png	12687
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-003-signal-waves.png	17623
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-004-pulse-trails.png	3626
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-005-radar-echo.png	14190
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/brand-patterns/preview-PP-PAT-006-secure-layers.png	11961
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/design-inspiration/REF-07-community-technical-questions-design.png	1817963
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/design-inspiration/REF-08-community-resources-design.png	1830627
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/design-inspiration/REF-09-signup-profile-account-design.png	1707419
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-00-matte-black-analytical-dashboard.jpg	133120
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-01-spacious-people-analytics-dashboard.jpg	305735
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-02-file-upload-in-progress.jpg	60669
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-03-file-upload-complete-compact.jpg	36377
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-04-file-upload-complete-actions.jpg	46699
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-05-perspective-card-carousel.jpg	122846
+history/releases/2026-11-26-approved-prototype-review-build/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26/references/ui-inspiration/REF-06-numbered-feature-cards.jpg	139414
+history/source-packages/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-25.zip	5497380
+history/source-packages/PacketPulse_2.0_Approved_Prototype_Review_Build_2026-11-26.zip	6030774
+history/source-packages/PacketPulse_2.0_Discussion_2026-11-25.zip	943413
+history/source-packages/PacketPulse_2.0_Recovery_Pages_Design_System_Package.zip	215055
+history/source-packages/PacketPulse_2.0_Team_Documentation_v1.3_2026-10-24.zip	3767859
+history/source-packages/PacketPulse_2.0_Update_2026-11-24.zip	217291

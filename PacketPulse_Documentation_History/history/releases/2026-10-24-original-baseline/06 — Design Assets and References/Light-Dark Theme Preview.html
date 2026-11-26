@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B1114"><title>PacketPulse 2.0 — Light and Dark Theme Preview</title>
+<style>
+/* Color tokens are exported from the PDF; the PDF is the palette authority. */
+/*
+  PacketPulse 2.0 color tokens — Design Color System revision 1.2 (APPROVED) + DEC-036/DEC-037 module identity rules for dark and light themes.
+  Authority: PacketPulse_2.0_Design_Color_System.pdf.
+  Change the PDF and decision register before updating these values.
+  Semantic names use surface + foreground pairings, compatible with shadcn/ui patterns.
+*/
+
+:root {
+  color-scheme: light;
+  --background: #F5F8F6;
+  --foreground: #152025;
+  --card: #FFFFFF;
+  --card-foreground: #152025;
+  --popover: #FFFFFF;
+  --popover-foreground: #152025;
+  --primary: #156152;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #156152;
+  --secondary: #E8F4EF;
+  --secondary-foreground: #152025;
+  --muted: #E8F4EF;
+  --muted-foreground: #52615B;
+  --accent: #E8F4EF;
+  --accent-foreground: #152025;
+  --border: #DCE5DF;
+  --input: #738279;
+  --ring: #156152;
+  --surface-selected: #E8F4EF;
+  --surface-raised: #FFFFFF;
+  --overlay: #FFFFFF;
+  --disabled-foreground: #52615B;
+
+  --success: #E8F6ED;
+  --success-foreground: #166534;
+  --warning: #FFF4D6;
+  --warning-foreground: #854D0E;
+  --danger-surface: #FCEBED;
+  --danger-foreground: #9F2534;
+  --destructive: #B42335;
+  --destructive-foreground: #FFFFFF;
+  --info: #F1F5F9;
+  --info-foreground: #475569;
+
+  --signal-lime: #C7FE53;
+  --signal-lime-foreground: #001D21;
+  --brand-forest: #156152;
+  --deep-teal: #001D21;
+
+  --community: #156152;
+  --community-soft: #E8F4EF;
+  --learning: #635BCA;
+  --learning-soft: #F0EFFF;
+  --recruitment: #1D4F86;
+  --recruitment-soft: #E8F0FA;
+  --payments: #6F2A5F;
+  --payments-soft: #F7EBF4;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0B1114;              /* Cool charcoal canvas */
+  --foreground: #F4F7F6;
+  --card: #101B1E;
+  --card-foreground: #F4F7F6;
+  --popover: #1A2B30;
+  --popover-foreground: #F4F7F6;
+  --primary: #156152;                 /* Brand forest */
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #1B7564;
+  --secondary: #142327;
+  --secondary-foreground: #F4F7F6;
+  --muted: #142327;
+  --muted-foreground: #A3B4B7;
+  --accent: #1A2B30;
+  --accent-foreground: #F4F7F6;
+  --border: #263B40;                  /* Quiet decorative border/divider */
+  --input: #71878A;                   /* Higher-contrast control boundary */
+  --ring: #96D294;
+  --surface-selected: #142327;
+  --surface-raised: #1A2B30;
+  --overlay: #1C3035;                 /* Only for meaningful floating layers */
+  --disabled-foreground: #819699;
+
+  --success: #123B32;
+  --success-foreground: #86E0B0;
+  --warning: #46341C;
+  --warning-foreground: #FFD17A;
+  --danger-surface: #45252C;
+  --danger-foreground: #FF9FAD;
+  --destructive: #D76A7A;
+  --destructive-foreground: #0B1114;
+  --info: #273942;
+  --info-foreground: #B8C9D2;
+
+  --signal-lime: #C7FE53;             /* Rewards / one standout action */
+  --signal-lime-foreground: #0B1114;
+  --brand-forest: #156152;
+  --deep-teal: #001D21;               /* Community-only core canvas; never the global dark canvas */
+
+  --community: #96D294;
+  --community-soft: #172D25;
+  --learning: #B1ACFE;
+  --learning-soft: #26235A;
+  --recruitment: #8DB8E8;
+  --recruitment-soft: #12304D;
+  --payments: #E4A8D8;
+  --payments-soft: #3A1F36;
+}
+
+/*
+  Section identity scopes (DEC-036/DEC-037): shared shell stays theme-neutral.
+  Light theme: off-white canvas and white content surfaces; use each section's
+  approved light accent/tint in localized identity zones. Community may use a
+  deep-teal hero/canvas only inside Community routes, with a light foreground.
+  Dark theme: charcoal canvas and teal-tinted neutral surfaces; use each section's
+  approved dark accent/tint in localized identity zones. Dense cards/forms remain
+  neutral in both themes. No new palette values are introduced here.
+*/
+[data-section="community"] {
+  --section-accent: var(--community);
+  --section-soft: var(--community-soft);
+  --section-hero: var(--deep-teal);
+  --section-hero-foreground: #F4F7F6;
+  --section-pattern: rgba(21, 97, 82, 0.035);
+}
+[data-section="learning"] {
+  --section-accent: var(--learning);
+  --section-soft: var(--learning-soft);
+  --section-hero: var(--learning-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(99, 91, 202, 0.035);
+}
+[data-section="practice"] {
+  --section-accent: var(--learning);
+  --section-soft: var(--learning-soft);
+  --section-hero: var(--surface-raised);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(99, 91, 202, 0.028);
+}
+[data-section="assessments"] {
+  --section-accent: var(--community);
+  --section-soft: var(--community-soft);
+  --section-hero: var(--community-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(21, 97, 82, 0.03);
+}
+[data-section="jobs"] {
+  --section-accent: var(--recruitment);
+  --section-soft: var(--recruitment-soft);
+  --section-hero: var(--recruitment-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(29, 79, 134, 0.035);
+}
+[data-section="payments"] {
+  --section-accent: var(--payments);
+  --section-soft: var(--payments-soft);
+  --section-hero: var(--payments-soft);
+  --section-hero-foreground: var(--foreground);
+  --section-pattern: rgba(111, 42, 95, 0.035);
+}
+
+/* Dark theme uses brighter accents over the already-approved dark tints. */
+.dark [data-section="community"] { --section-pattern: rgba(150, 210, 148, 0.045); }
+.dark [data-section="learning"] { --section-pattern: rgba(177, 172, 254, 0.045); }
+.dark [data-section="practice"] { --section-pattern: rgba(177, 172, 254, 0.035); }
+.dark [data-section="assessments"] { --section-pattern: rgba(150, 210, 148, 0.035); }
+.dark [data-section="jobs"] { --section-pattern: rgba(141, 184, 232, 0.045); }
+.dark [data-section="payments"] { --section-pattern: rgba(228, 168, 216, 0.045); }
+
+/* Usage rules:
+   - Primary CTA: --primary + --primary-foreground. Hover: --primary-hover.
+   - Lime is limited to rewards, milestone moments, or one standout action per view.
+   - Canvas texture: broad canvas pattern belongs only to the Community section; other modules use local hero/identity zones.
+     Keep dense content cards neutral and preserve text contrast.
+   - Use a restrained teal ambient gradient in hero/empty-state areas only; no glow on routine cards.
+   - Surface ladder: background -> card -> selected -> raised/popover -> overlay. Elevate only when justified.
+   - Quiet borders separate surfaces; use --input for interactive control boundaries.
+   - Focus ring: 3px solid var(--ring), 2px offset. Do not use color alone for any state.
+   - Status chip/banner uses a semantic surface + its matching foreground, visible text, and a glyph.
+   - Both themes use a neutral shared canvas: off-white in light mode and charcoal in dark mode.
+   - Community may use a deep-teal identity canvas/hero only within Community routes/sections.
+   - Light mode uses approved module tints/accents in localized identity zones; dense cards/forms stay neutral.
+   - Learning and Practice share the Learning family; Practice is distinguished with code/lab component treatment.
+   - Assessments uses a verification-focused green identity zone; Jobs uses recruitment blue; Payments uses plum.
+   - Accent colors never replace semantic status tokens. If a color changes, revise the PDF first, then this token file and the decision register. DEC-037 applies the module identity rule to light mode without adding colors.
+*/
+
+/* UI preview only: illustrative content, not a production app. */
+
+*{box-sizing:border-box}html{background:var(--background);scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--background);color:var(--foreground);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--ring);outline-offset:2px}a{color:inherit;text-decoration:none}.layout{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;padding:24px 16px 18px;background:var(--background);border-right:1px solid var(--border);display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:10px;padding:0 8px;font-size:18px;font-weight:750;letter-spacing:-.035em}.brandmark{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--border);border-radius:10px;background:var(--surface-selected);color:var(--signal-lime)}.eyebrow{font-size:10px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-foreground)}.nav-label{padding:0 12px;margin-bottom:8px;color:var(--muted-foreground);font-size:11px;font-weight:650}.nav{display:grid;gap:4px}.nav a{display:flex;align-items:center;gap:11px;min-height:42px;padding:0 12px;border-radius:10px;color:var(--muted-foreground);font-weight:600;border:1px solid transparent;transition:background .15s ease,color .15s ease}.nav a svg{width:18px;height:18px;flex:none}.nav a:hover{background:var(--card);color:var(--foreground)}.nav a.active{background:var(--surface-selected);color:var(--foreground);border-color:var(--border);box-shadow:inset 3px 0 0 var(--community)}.nav a.active svg{color:var(--community)}.sidebar-bottom{margin-top:auto;display:grid;gap:12px}.sidebar-note{padding:14px;border-radius:14px;border:1px solid var(--border);background:var(--card)}.sidebar-note p{color:var(--muted-foreground);font-size:12px;margin:5px 0 12px}.main{min-width:0}.topbar{height:76px;padding:0 32px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--background) 92%,transparent);display:flex;align-items:center;justify-content:space-between;gap:20px}.search{height:40px;display:flex;align-items:center;gap:10px;flex:1;max-width:560px;padding:0 13px;border:1px solid var(--border);background:var(--card);color:var(--muted-foreground);border-radius:10px}.search svg{width:17px;height:17px}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--foreground);font-size:13px}.search input::placeholder{color:var(--disabled-foreground)}.top-actions{display:flex;align-items:center;gap:18px}.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted-foreground);display:grid;place-items:center}.icon-btn:hover{background:var(--surface-selected);border-color:var(--border)}.icon-btn svg{width:19px;height:19px}.profile{display:flex;align-items:center;gap:10px;padding-left:16px;border-left:1px solid var(--border)}.avatar{align-self:start;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%;background:var(--surface-raised);color:var(--foreground);font-weight:750;font-size:12px;width:38px;height:38px;flex:none}.avatar.sm{width:30px;height:30px;font-size:10px}.profile strong{display:block;font-size:12px}.profile span{display:block;color:var(--muted-foreground);font-size:11px}.content{max-width:1600px;margin:auto;padding:28px 32px 40px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:28px 0 14px}.section-head h2{font-size:15px;margin:0;font-weight:720;letter-spacing:-.02em}.section-head p{margin:3px 0 0;color:var(--muted-foreground);font-size:12px}.topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:16px}.topline .eyebrow{color:var(--community)}.topline h1{font-size:24px;letter-spacing:-.04em;margin:3px 0 0;font-weight:760}.topline p{margin:4px 0 0;color:var(--muted-foreground)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:0 14px;border-radius:10px;font-weight:700;font-size:12px;border:1px solid transparent;white-space:nowrap;transition:background .15s ease,border-color .15s ease,transform .15s ease}.btn svg{width:15px;height:15px}.btn.primary{background:var(--primary);color:var(--primary-foreground)}.btn.primary:hover,.btn.hover-demo{background:var(--primary-hover);color:var(--primary-foreground)}.btn.secondary{background:var(--surface-selected);color:var(--foreground);border-color:var(--border)}.btn.secondary:hover{background:var(--surface-raised)}.btn.ghost{background:transparent;color:var(--foreground);border-color:var(--border)}.btn.ghost:hover{background:var(--surface-selected)}.btn.lime{background:var(--signal-lime);color:var(--deep-teal)}.btn.lime:hover{filter:brightness(.96)}.btn.destructive{background:var(--destructive);color:var(--destructive-foreground)}.btn:disabled{opacity:.5;cursor:not-allowed}.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:28px;align-items:center;padding:28px 30px;border-radius:18px;border:1px solid var(--border);background:radial-gradient(ellipse at 82% 35%,color-mix(in srgb,var(--brand-forest) 32%,transparent),transparent 45%),linear-gradient(125deg,var(--card) 0%,var(--background) 72%);min-height:236px}.hero-copy,.journey{position:relative;z-index:1}.hero h2{font-size:30px;line-height:1.15;letter-spacing:-.045em;margin:8px 0 12px;max-width:540px}.hero h2 em{font-style:normal;color:var(--community)}.hero p{color:var(--muted-foreground);max-width:540px;margin:0 0 18px;font-size:13px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.journey{border:1px solid color-mix(in srgb,var(--input) 35%,transparent);border-radius:15px;padding:18px;background:var(--background);max-width:390px;justify-self:end;width:100%}.journey-title{display:flex;justify-content:space-between;align-items:center;color:var(--muted-foreground);font-size:11px;margin-bottom:12px}.journey-title strong{color:var(--foreground);font-size:12px}.journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.journey-step{padding:10px 4px 9px;border:1px solid var(--border);background:var(--card);border-radius:10px;text-align:center;font-size:10px;color:var(--muted-foreground)}.journey-step .step-icon{margin:0 auto 6px;width:26px;height:26px;border-radius:8px;background:var(--surface-selected);display:grid;place-items:center;color:var(--community)}.journey-step svg{width:14px;height:14px}.journey-step.done{border-color:var(--brand-forest);background:var(--surface-selected);color:var(--foreground)}.journey-step.current{border-color:var(--community);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--community) 22%,transparent)}.journey-foot{margin-top:12px;display:flex;align-items:center;gap:10px;color:var(--muted-foreground);font-size:11px}.bar{height:5px;flex:1;background:var(--surface-raised);border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:var(--primary);border-radius:inherit}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}.stat{padding:16px;border:1px solid var(--border);border-radius:13px;background:var(--card);min-width:0}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted-foreground);font-size:11px}.stat-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:var(--surface-selected);color:var(--community)}.stat-icon svg{width:16px;height:16px}.stat strong{display:block;font-size:24px;letter-spacing:-.04em;margin-top:10px;line-height:1.2}.stat small{display:block;color:var(--muted-foreground);font-size:11px;margin-top:4px}.trend{color:var(--success-foreground);font-weight:700}.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.8fr);gap:14px;margin-top:14px;align-items:start}.stack{display:grid;gap:14px;min-width:0}.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;min-width:0;overflow:hidden}.panel-head{padding:16px 18px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h3{font-size:13px;letter-spacing:-.015em;margin:0}.panel-head p{color:var(--muted-foreground);font-size:11px;margin:3px 0 0}.link{font-size:11px;font-weight:700;color:var(--community)}.panel-body{padding:0 18px 18px}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.tab{font-size:10px;font-weight:650;color:var(--muted-foreground);border:1px solid var(--border);background:transparent;padding:6px 11px;border-radius:999px}.tab.active{background:var(--surface-selected);border-color:var(--input);color:var(--foreground)}.feed-item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;padding:14px 0;border-top:1px solid var(--border)}.feed-item:first-of-type{border-top:0}.feed-main{min-width:0}.feed-author{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.feed-author strong{font-size:11px}.meta{color:var(--disabled-foreground);font-size:10px}.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border:1px solid transparent;border-radius:999px;font-size:9px;font-weight:700}.pill.community{color:var(--community);background:var(--surface-selected);border-color:var(--border)}.pill.learning{color:var(--learning);background:var(--learning-soft)}.pill.recruitment{color:var(--recruitment);background:var(--recruitment-soft)}.pill.payments{color:var(--payments);background:var(--payments-soft)}.pill.success{background:var(--success);color:var(--success-foreground)}.pill.warning{background:var(--warning);color:var(--warning-foreground)}.pill.danger{background:var(--danger-surface);color:var(--danger-foreground)}.pill.info{background:var(--info);color:var(--info-foreground)}.feed-item h4{font-size:12px;margin:7px 0 4px;letter-spacing:-.01em}.feed-item p{font-size:11px;color:var(--muted-foreground);line-height:1.55;margin:0}.feed-foot{display:flex;gap:14px;margin-top:10px;color:var(--muted-foreground);font-size:10px}.feed-foot span{display:flex;align-items:center;gap:5px}.feed-foot svg{width:13px;height:13px}.course-card{padding:13px;border-radius:11px;background:var(--surface-selected);border:1px solid var(--border)}.course-head{display:flex;gap:10px;align-items:center}.course-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:10px;background:var(--learning-soft);color:var(--learning);flex:none}.course-icon svg{width:20px;height:20px}.course-title{min-width:0;flex:1}.course-title strong{font-size:12px;display:block}.course-title span{font-size:10px;color:var(--muted-foreground)}.course-percent{font-size:13px;font-weight:750}.course-foot{display:flex;align-items:center;gap:9px;margin-top:14px}.course-foot span{font-size:10px;color:var(--muted-foreground);white-space:nowrap}.activity-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--border)}.activity-row:first-child{border-top:0}.activity-mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--surface-raised);color:var(--foreground);flex:none}.activity-mark svg{width:15px;height:15px}.activity-copy{flex:1;min-width:0}.activity-copy strong{display:block;font-size:11px}.activity-copy span{display:block;color:var(--muted-foreground);font-size:10px}.amount{font-size:11px;font-weight:720;white-space:nowrap}.amount.positive{color:var(--success-foreground)}.amount.negative{color:var(--danger-foreground)}.status-stack{display:grid;gap:8px}.status-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 11px;border:1px solid var(--border);border-radius:10px;background:var(--surface-selected)}.status-row span:first-child{font-size:11px;color:var(--foreground)}.token-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.token-sample{padding:10px;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px}.token-sample code{font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted-foreground)}.module-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.module-tile{padding:12px;border-radius:11px;border:1px solid var(--border);background:var(--surface-raised)}.module-tile strong{display:block;font-size:11px}.module-tile span{font-size:10px;color:var(--muted-foreground)}.module-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}.module-dot.community{background:var(--community)}.module-dot.learning{background:var(--learning)}.module-dot.recruitment{background:var(--recruitment)}.module-dot.payments{background:var(--payments)}.micro{font-size:10px;color:var(--muted-foreground)}.footer-note{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;color:var(--muted-foreground);font-size:10px}.token-callout{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--border);border-radius:11px;background:var(--card)}.token-callout .swatch{width:13px;height:13px;border-radius:4px;flex:none;margin-top:3px;background:var(--primary)}.token-callout strong{font-size:11px}.token-callout p{margin:4px 0 0;color:var(--muted-foreground);font-size:10px}.mini-label{font-size:9px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground)}
+@media(max-width:1120px){.layout{grid-template-columns:210px minmax(0,1fr)}.content{padding:22px}.topbar{padding:0 22px}.hero{grid-template-columns:1fr}.journey{justify-self:start;max-width:none}.dashboard-grid{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr)}}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:relative;width:100%;height:auto;padding:14px 16px;border-right:0;border-bottom:1px solid var(--border);gap:14px}.sidebar .nav{display:flex;overflow-x:auto;gap:5px}.sidebar .nav a{flex:none}.sidebar .nav-label,.sidebar-bottom{display:none}.brand{padding:0}.topbar{height:auto;min-height:62px;padding:12px 16px;flex-wrap:wrap}.search{max-width:none;order:2;flex-basis:100%}.top-actions{margin-left:auto}.profile{padding-left:10px}.content{padding:18px 16px 30px}.topline{align-items:flex-start;flex-direction:column}.topline .btn{align-self:stretch}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-grid{grid-template-columns:1fr}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:22px 18px}.hero h2{font-size:26px}.footer-note{flex-direction:column}}
+@media(max-width:420px){.journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.token-list{grid-template-columns:1fr}.top-actions{gap:5px}.profile div:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* DEC-036/037: one neutral shell, contextual section identity in both themes. */
+.module-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.module-tile[data-section]{background:var(--section-hero);color:var(--section-hero-foreground);border-color:var(--border);min-height:76px;position:relative;overflow:hidden}
+.module-tile[data-section]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--section-accent)}
+.module-tile[data-section] strong{color:var(--section-accent)}
+.module-tile[data-section] span{color:var(--muted-foreground)}
+.module-tile[data-section="community"] strong,.module-tile[data-section="community"] span{color:var(--section-hero-foreground)}
+.section-panel[data-section]{border-top:2px solid var(--section-accent)}
+.section-panel[data-section] .panel-head h3{color:var(--foreground)}
+.section-panel[data-section] .link{color:var(--section-accent)}
+.theme-toggle{display:flex;align-items:center;gap:7px;min-height:36px;padding:0 11px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--foreground);font-size:11px;font-weight:700;white-space:nowrap}
+.theme-toggle:hover{background:var(--surface-selected)}
+.theme-toggle svg{width:16px;height:16px;color:var(--muted-foreground)}
+@media(max-width:800px){.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-toggle .theme-label{display:none}}
+
+</style>
+</head>
+<body class="dark" data-theme="dark">
+<div class="layout">
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="PacketPulse home">
+      <span class="brandmark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13h4l3-8 4 14 3-9 2 3h4"/></svg></span>
+      <span>PacketPulse</span>
+    </a>
+    <div>
+      <div class="nav-label">Workspace</div>
+      <nav class="nav">
+        <a href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+        <a href="#community" class="active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M23 11h-6"/></svg>Community</a>
+        <a href="#learning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H21v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 17.5A2.5 2.5 0 0 1 6.5 15H21M9 7h7M9 10h7"/></svg>Learning</a>
+        <a href="#modules"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9 3-3-3-3M4 13h7a4 4 0 0 0 4-4V5M16 15l-3 3 3 3M20 11h-7a4 4 0 0 0-4 4v4"/></svg>Practice</a>
+        <a href="#states"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7zM8.5 12l2.3 2.3 4.8-5"/></svg>Assessments</a>
+        <a href="#modules"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/></svg>Jobs</a>
+        <a href="#states"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>Payments</a>
+      </nav>
+    </div>
+    <div>
+      <div class="nav-label">You</div>
+      <nav class="nav">
+        <a href="#stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h17M8 15l4-4 3 2 5-7M16 6h4v4"/></svg>My Progress</a>
+        <a href="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-4 2v-5.5A7.5 7.5 0 1 1 21 11.5Z"/><path d="M8 11h8M8 14h5"/></svg>Messages</a>
+        <a href="#states"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>Notifications</a>
+      </nav>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="sidebar-note">
+        <div class="eyebrow">Next milestone</div>
+        <strong>Finish System Design</strong>
+        <p>One more learning path to complete your current goal.</p>
+        <a href="#learning" class="btn primary" style="width:100%">Continue learning <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="micro">Theme preview · DEC-036 / DEC-037</div>
+    </div>
+  </aside>
+
+  <main class="main" id="top">
+    <header class="topbar">
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input aria-label="Search PacketPulse" placeholder="Search people, posts, courses, jobs…"><span class="micro">⌘ K</span></label>
+      <div class="top-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" title="Switch to light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg><span class="theme-label">Light theme</span>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></button>
+        <button class="icon-btn" type="button" aria-label="Messages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-4 2v-5.5A7.5 7.5 0 1 1 21 11.5Z"/></svg></button>
+        <div class="profile"><div class="avatar" aria-hidden="true">KB</div><div><strong>Kartik Binzade</strong><span>Member workspace</span></div></div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="topline">
+        <div><div class="eyebrow">MONDAY · YOUR ENGINEERING JOURNEY</div><h1>Good morning, Kartik.</h1><p>A clearer view of what you’re learning, proving, and building.</p></div>
+        <button class="btn primary" type="button">View your progress <span aria-hidden="true">→</span></button>
+      </div>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">CONNECT · LEARN · GROW TOGETHER</div>
+          <h2 id="hero-title">Build skills that move you <em>forward.</em></h2>
+          <p>Learn with your community, practice on realistic challenges, and turn demonstrated skills into new opportunities.</p>
+          <div class="hero-actions"><a class="btn primary" href="#learning">Continue learning <span aria-hidden="true">→</span></a><a class="btn secondary" href="#community">Explore community</a></div>
+        </div>
+        <div class="journey" aria-label="Learning journey progress">
+          <div class="journey-title"><strong>Your growth journey</strong><span class="pill success">On track</span></div>
+          <div class="journey-steps">
+            <div class="journey-step done"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></div>Learn</div>
+            <div class="journey-step current"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9 3-3-3-3M4 13h7a4 4 0 0 0 4-4V5"/></svg></div>Practice</div>
+            <div class="journey-step"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>Prove</div>
+            <div class="journey-step"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3"/></svg></div>Grow</div>
+          </div>
+          <div class="journey-foot"><span>2 of 4 milestones</span><div class="bar"><i style="width:50%"></i></div><strong>50%</strong></div>
+        </div>
+      </section>
+
+      <section class="stats" id="stats" aria-label="Your progress at a glance">
+        <article class="stat"><div class="stat-top"><span>Learning streak</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22a7 7 0 0 0 7-7c0-4-4-7-4-12-3 2-4 5-4 7-2-1-3-3-3-4-3 3-4 6-4 9a8 8 0 0 0 8 7Z"/></svg></span></div><strong>7 days</strong><small><span class="trend">↗ Consistent</span> · keep it going</small></article>
+        <article class="stat"><div class="stat-top"><span>Courses completed</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 8 9-5 9 5-9 5zM6 10v6c4 3 8 3 12 0v-6M21 8v7"/></svg></span></div><strong>4 <span class="micro">/ 6</span></strong><small>Two modules left in your path</small></article>
+        <article class="stat"><div class="stat-top"><span>Verified skills</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7zM8.5 12l2.3 2.3 4.8-5"/></svg></span></div><strong>5</strong><small><span class="pill success">Evidence-backed</span></small></article>
+        <article class="stat"><div class="stat-top"><span>Job matches</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></svg></span></div><strong>12</strong><small>Based on your current profile</small></article>
+      </section>
+
+      <div class="dashboard-grid">
+        <div class="stack">
+          <section class="panel section-panel" id="community" data-section="community" aria-labelledby="community-heading">
+            <div class="panel-head"><div><h3 id="community-heading">Latest from your community</h3><p>Useful conversations from people building in public.</p></div><a class="link" href="#">View all →</a></div>
+            <div class="panel-body">
+              <div class="tabs" role="tablist" aria-label="Community feed filter"><button class="tab active" role="tab" aria-selected="true">For you</button><button class="tab" role="tab" aria-selected="false">Following</button><button class="tab" role="tab" aria-selected="false">Learning</button><button class="tab" role="tab" aria-selected="false">Jobs</button></div>
+              <article class="feed-item"><div class="avatar sm" aria-hidden="true">PS</div><div class="feed-main"><div class="feed-author"><strong>Priya Sharma</strong><span class="pill community">Top contributor</span><span class="meta">· 2h ago</span></div><h4>What helped you understand system design beyond diagrams?</h4><p>I’ve been collecting the trade-offs behind real architectures. Curious which practical exercises made the biggest difference for you.</p><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"><span class="pill learning">System design</span><span class="pill community">Discussion</span></div><div class="feed-foot"><span>♡ 48</span><span>▢ 12 replies</span><span>↗ Share</span></div></div></article>
+              <article class="feed-item"><div class="avatar sm" aria-hidden="true">RM</div><div class="feed-main"><div class="feed-author"><strong>Rahul Mehta</strong><span class="pill recruitment">Member</span><span class="meta">· 4h ago</span></div><h4>React performance: what do you measure first?</h4><p>Before adding another optimisation, I’m trying to make the user-facing impact measurable. Here’s the checklist I’m working through.</p><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"><span class="pill learning">React</span><span class="pill learning">Performance</span></div><div class="feed-foot"><span>♡ 32</span><span>▢ 8 replies</span><span>↗ Share</span></div></div></article>
+            </div>
+          </section>
+          <section class="panel section-panel" id="learning" data-section="learning" aria-labelledby="learning-heading">
+            <div class="panel-head"><div><h3 id="learning-heading">Pick up where you left off</h3><p>One clear next step, with progress you can trust.</p></div><a class="link" href="#">My learning →</a></div>
+            <div class="panel-body"><div class="course-card"><div class="course-head"><div class="course-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 8 9-5 9 5-9 5zM6 10v6c4 3 8 3 12 0v-6M21 8v7"/></svg></div><div class="course-title"><strong>System Design Fundamentals</strong><span>Module 4 · Scaling and reliability</span></div><div class="course-percent">68%</div></div><div class="bar" style="margin-top:13px"><i style="width:68%"></i></div><div class="course-foot"><span>Next: Designing for failure</span><div style="flex:1"></div><a class="btn primary" href="#">Continue <span aria-hidden="true">→</span></a></div></div></div>
+          </section>
+        </div>
+
+        <div class="stack">
+          <section class="panel" aria-labelledby="status-heading" id="states">
+            <div class="panel-head"><div><h3 id="status-heading">Status, with clear meaning</h3><p>Paired surfaces and labels—not color alone.</p></div></div>
+            <div class="panel-body"><div class="status-stack">
+              <div class="status-row"><span>Assessment verified</span><span class="pill success">✓ Success</span></div>
+              <div class="status-row"><span>Verification pending</span><span class="pill warning">! Pending</span></div>
+              <div class="status-row"><span>Payment failed</span><span class="pill danger">× Error</span></div>
+              <div class="status-row"><span>Session available</span><span class="pill info">i Information</span></div>
+            </div></div>
+          </section>
+          <section class="panel" aria-labelledby="module-heading" id="modules">
+            <div class="panel-head"><div><h3 id="module-heading">One shell, clear section identities</h3><p>Shared charcoal shell; each section owns a scoped identity zone.</p></div></div>
+            <div class="panel-body"><div class="module-grid">
+              <div class="module-tile" data-section="community"><strong><i class="module-dot community"></i>Community</strong><span>Deep-teal canvas is scoped here</span></div>
+              <div class="module-tile" data-section="learning"><strong><i class="module-dot learning"></i>Learning</strong><span>Indigo pathways and hero</span></div>
+              <div class="module-tile" data-section="practice"><strong><i class="module-dot learning"></i>Practice</strong><span>Neutral lab + indigo code chrome</span></div>
+              <div class="module-tile" data-section="assessments"><strong><i class="module-dot community"></i>Assessments</strong><span>Verification-focused green zone</span></div>
+              <div class="module-tile" data-section="jobs"><strong><i class="module-dot recruitment"></i>Jobs</strong><span>Recruitment blue identity</span></div>
+              <div class="module-tile" data-section="payments"><strong><i class="module-dot payments"></i>Payments</strong><span>Plum finance identity</span></div>
+            </div></div>
+          </section>
+          <section class="panel" aria-labelledby="actions-heading">
+            <div class="panel-head"><div><h3 id="actions-heading">Actions & interaction hierarchy</h3><p>Primary, supporting, destructive, and rare emphasis.</p></div></div>
+            <div class="panel-body" style="display:grid;gap:12px">
+              <div><div class="mini-label" style="margin-bottom:7px">Primary action</div><button class="btn primary" type="button">Continue assessment <span aria-hidden="true">→</span></button></div>
+              <div><div class="mini-label" style="margin-bottom:7px">Supporting actions</div><div style="display:flex;gap:7px;flex-wrap:wrap"><button class="btn secondary" type="button">Save progress</button><button class="btn ghost" type="button">Cancel</button></div></div>
+              <div><div class="mini-label" style="margin-bottom:7px">Dangerous action</div><button class="btn destructive" type="button">Remove payment method</button></div>
+              <div><div class="mini-label" style="margin-bottom:7px">Reward / one standout moment</div><button class="btn lime" type="button">Skill verified <span aria-hidden="true">✓</span></button></div>
+              <div class="token-callout"><span class="swatch" aria-hidden="true"></span><div><strong>Signal lime is intentionally rare.</strong><p>Primary navigation and routine CTAs keep the brand-green action system; lime highlights a meaningful milestone or reward.</p></div></div>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="activity-heading">
+            <div class="panel-head"><div><h3 id="activity-heading">Recent activity</h3><p>Layering through surfaces, not shadows.</p></div><a href="#" class="link">See all</a></div>
+            <div class="panel-body">
+              <div class="activity-row"><span class="activity-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7zM8.5 12l2.3 2.3 4.8-5"/></svg></span><div class="activity-copy"><strong>React skill verified</strong><span>Assessment evidence reviewed · Today</span></div><span class="pill success">Complete</span></div>
+              <div class="activity-row"><span class="activity-mark" style="background:var(--learning-soft);color:var(--learning)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 8 9-5 9 5-9 5zM6 10v6c4 3 8 3 12 0v-6"/></svg></span><div class="activity-copy"><strong>System Design Fundamentals</strong><span>Continue the next module</span></div><span class="pill learning">68%</span></div>
+              <div class="activity-row"><span class="activity-mark" style="background:var(--recruitment-soft);color:var(--recruitment)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3"/></svg></span><div class="activity-copy"><strong>3 relevant opportunities</strong><span>New matches for your profile</span></div><span class="pill recruitment">New</span></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="footer-note"><span>PacketPulse 2.0 · Light and dark theme preview</span><span>Palette values: Color System PDF rev 1.2 · Section identity rules: DEC-036 / DEC-037</span></div>
+    </div>
+  </main>
+</div>
+<script>
+// Theme and filter demos make the preview useful without a backend.
+const themeToggle = document.querySelector('[data-theme-toggle]');
+function syncThemeControl(){
+  const isDark=document.body.classList.contains('dark');
+  document.body.dataset.theme=isDark?'dark':'light';
+  themeToggle.setAttribute('aria-label',isDark?'Switch to light theme':'Switch to dark theme');
+  themeToggle.setAttribute('title',isDark?'Switch to light theme':'Switch to dark theme');
+  themeToggle.querySelector('.theme-label').textContent=isDark?'Light theme':'Dark theme';
+  themeToggle.querySelector('svg').innerHTML=isDark
+    ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>'
+    : '<path d="M20.9 13A8.5 8.5 0 0 1 11 3.1 8.8 8.8 0 1 0 20.9 13Z"/>';
+  document.querySelector('meta[name="theme-color"]').content=isDark?'#0B1114':'#F5F8F6';
+}
+themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark');syncThemeControl();});
+syncThemeControl();
+document.querySelectorAll('.tabs .tab').forEach((tab)=>tab.addEventListener('click',()=>{
+  const tabs=[...tab.parentElement.querySelectorAll('.tab')];
+  tabs.forEach((t)=>{t.classList.toggle('active',t===tab);t.setAttribute('aria-selected',String(t===tab));});
+}));
+</script>
+</body></html>

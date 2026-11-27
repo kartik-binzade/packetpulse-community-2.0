@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "product": "PacketPulse 2.0",
+    "version": "1.0",
+    "status": "owner-approved-primary-foundation",
+    "approval": true,
+    "approved_on": "2026-11-27",
+    "note": "Palette 1 finalized as primary foundation; refinements remain."
+  },
+  "active_foundation": {
+    "brand_violet": "#615AB9",
+    "brand_deep": "#16133E",
+    "brand_secondary_violet": "#8B7FF7",
+    "light_canvas": "#F1F5F9",
+    "forest": "#156152",
+    "signal_lime": "#C7FE53",
+    "soft_forest_accent": "#8BBBA5",
+    "payments_blue_family": "refinement_pending",
+    "black": "#0B0D0B",
+    "white": "#FFFFFF",
+    "themes": [
+      "light",
+      "dark"
+    ]
+  }
+}

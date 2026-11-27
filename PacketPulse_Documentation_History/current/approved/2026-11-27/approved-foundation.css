@@ -1,0 +1,25 @@
+/* PacketPulse 2.0 — approved colour foundation; state ramps still require contrast validation */
+:root {
+ --pp-brand-violet: #615AB9;
+ --pp-brand-deep: #16133E;
+ --pp-brand-violet-secondary: #8B7FF7;
+ --pp-canvas-light: #F1F5F9;
+ --pp-forest: #156152;
+ --pp-signal-lime: #C7FE53;
+ --pp-forest-soft: #8BBBA5;
+ --pp-black: #0B0D0B;
+ --pp-white: #FFFFFF;
+ --pp-color-brand-primary: var(--pp-brand-violet);
+ --pp-color-brand-deep: var(--pp-brand-deep);
+ --pp-color-brand-secondary: var(--pp-brand-violet-secondary);
+ --pp-color-accent-growth: var(--pp-forest);
+ --pp-color-accent-highlight: var(--pp-signal-lime);
+ --pp-color-accent-growth-soft: var(--pp-forest-soft);
+}
+[data-theme="dark"] {
+ /* Calibrate actual surfaces/text states; do not blindly invert light tokens. */
+ --pp-color-brand-primary: var(--pp-brand-violet-secondary);
+ --pp-color-brand-deep: var(--pp-white);
+ --pp-color-accent-growth: var(--pp-forest-soft);
+ --pp-color-accent-highlight: var(--pp-signal-lime);
+}
